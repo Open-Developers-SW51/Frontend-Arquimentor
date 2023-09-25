@@ -21,12 +21,18 @@ import { AppRoutingModule } from './app-routing.module';
 import {ProfileService} from "./Arquimentor/services/profile-service/profile-service.service";
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import {ViewProfileComponent} from "./Arquimentor/components/view-profile/view-profile.component";
+import {ChatComponent} from "./Arquimentor/components/chat/chat.component";
+import {ReviewsComponent} from "./Arquimentor/components/reviews/reviews.component";
 @NgModule({
   declarations: [
     AppComponent,
     HeaderContentComponent,
     MentorProfileComponent,
     StudentProfileComponent,
+    ViewProfileComponent,
+    ChatComponent,
+    ReviewsComponent,
   ],
   imports: [
     BrowserModule,
