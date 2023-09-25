@@ -1,0 +1,50 @@
+<div *ngIf="userProfile">
+  <mat-card class="profile-card">
+    <div class="profile-content">
+      <div class="profile-avatar">
+        <img [src]="userProfile.photo" alt="Profile Image">
+      </div>
+      <div class="profile-details">
+        <mat-card-title>
+          <ng-container *ngIf="!isEditing">{{ userProfile.name }}</ng-container>
+          <ng-container *ngIf="isEditing">
+            <input matInput [(ngModel)]="userProfile.name" name="name">
+          </ng-container>
+        </mat-card-title>
+        <mat-card-subtitle>
+          <ng-container *ngIf="!isEditing">{{ userProfile.nick }}</ng-container>
+          <ng-container *ngIf="isEditing">
+            <input matInput [(ngModel)]="userProfile.nick" name="nick">
+          </ng-container>
+        </mat-card-subtitle>
+        <mat-card-content>
+          <mat-icon>email</mat-icon>
+          <ng-container *ngIf="!isEditing">{{ userProfile.email }}</ng-container>
+          <ng-container *ngIf="isEditing">
+            <input matInput [(ngModel)]="userProfile.email" name="email">
+          </ng-container>
+        </mat-card-content>
+        <mat-card-content>
+          <mat-icon>phone</mat-icon>
+          <ng-container *ngIf="!isEditing">{{ userProfile.cellphone }}</ng-container>
+          <ng-container *ngIf="isEditing">
+            <input matInput [(ngModel)]="userProfile.cellphone" name="cellphone">
+          </ng-container>
+        </mat-card-content>
+        <mat-card-content>
+          <mat-icon>comment</mat-icon>
+          <ng-container *ngIf="!isEditing">"{{ userProfile.slogan }}"</ng-container>
+          <ng-container *ngIf="isEditing">
+            <input matInput [(ngModel)]="userProfile.slogan" name="slogan">
+          </ng-container>
+        </mat-card-content>
+
+      </div>
+    </div>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="toggleEdit()">
+        {{ isEditing ? 'Guardar' : 'Editar Perfil' }}
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
