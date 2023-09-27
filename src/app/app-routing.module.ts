@@ -5,6 +5,8 @@ import { MentorProfileComponent } from './Arquimentor/components/profiles/mentor
 import {ViewProfileComponent} from "./Arquimentor/components/view-profile/view-profile.component";
 import {ChatComponent} from "./Arquimentor/components/chat/chat.component";
 import {ReviewsComponent} from "./Arquimentor/components/reviews/reviews.component";
+import {LoginComponent} from "./Arquimentor/components/login/login.component";
+
 const routes: Routes = [
   { path: '', redirectTo: '/student-profile', pathMatch: 'full' },
   { path: 'student-profile/:studentId', component: StudentProfileComponent },
@@ -12,7 +14,7 @@ const routes: Routes = [
   { path: 'view', component: ViewProfileComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'reviews', component: ReviewsComponent },
-
+  { path: 'login', component: LoginComponent }
 ];
 
 @NgModule({
