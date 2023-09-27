@@ -5,13 +5,18 @@ import { MentorProfileComponent } from './Arquimentor/components/profiles/mentor
 import {ViewProfileComponent} from "./Arquimentor/components/view-profile/view-profile.component";
 import {ChatComponent} from "./Arquimentor/components/chat/chat.component";
 import {ReviewsComponent} from "./Arquimentor/components/reviews/reviews.component";
+import {LandigPageComponent} from "./Arquimentor/components/landig-page/landig-page.component";
+import{CardPublicationContentComponent} from "./Arquimentor/components/card-publication-content/card-publication-content.component";
+
 const routes: Routes = [
-  { path: '', redirectTo: '/student-profile', pathMatch: 'full' },
+  { path: '', redirectTo: '/card', pathMatch: 'full' },
   { path: 'student-profile/:studentId', component: StudentProfileComponent },
   { path: 'mentor-profile/:mentorId', component: MentorProfileComponent },
   { path: 'view', component: ViewProfileComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'reviews', component: ReviewsComponent },
+  { path: 'landingpage', component: LandigPageComponent },
+  { path: 'card', component: CardPublicationContentComponent },
 
 ];
 
