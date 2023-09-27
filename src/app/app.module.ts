@@ -25,6 +25,9 @@ import {ViewProfileComponent} from "./Arquimentor/components/view-profile/view-p
 import {ChatComponent} from "./Arquimentor/components/chat/chat.component";
 import {ReviewsComponent} from "./Arquimentor/components/reviews/reviews.component";
 import { CardPublicationContentComponent } from './Arquimentor/components/card-publication-content/card-publication-content.component';
+import { LandigPageComponent } from './Arquimentor/components/landig-page/landig-page.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +37,7 @@ import { CardPublicationContentComponent } from './Arquimentor/components/card-p
     ViewProfileComponent,
     ChatComponent,
     ReviewsComponent,
-
+    LandigPageComponent,
   ],
   imports: [
     BrowserModule,
