@@ -1,0 +1,49 @@
+<app-header></app-header>
+
+<div class="container">
+  <section>
+    <h3>SIGN UP</h3>
+    <p>Already have an account? <span>Log in</span></p>
+    <form [formGroup]="registerForm" (ngSubmit)="register()" mat class="card" >
+      <div class="input-box">
+        <mat-label>Name</mat-label>
+        <mat-form-field>
+          <input  type="name" placeholder="Name" >
+        </mat-form-field>
+      </div>
+
+      <div class="input-box">
+        <mat-label>Username</mat-label>
+        <mat-form-field>
+          <input  type="username" placeholder="Username" >
+        </mat-form-field>
+      </div>
+
+      <div class="input-box">
+        <mat-label>Email address</mat-label>
+        <mat-form-field>
+          <input  type="email" placeholder="Email" >
+        </mat-form-field>
+      </div>
+
+      <div class="input-box">
+        <mat-label>Password</mat-label>
+        <mat-form-field>
+          <input matInput type="password" placeholder="Password" >
+        </mat-form-field>
+      </div>
+
+      <div class="column">
+        <p>By registering you are accepting our <u>Terms of Use</u> and <u>Privacy Policy</u></p>
+      </div>
+      <button type="submit" [disabled]="isRegister()">Create Account</button>
+
+
+    </form>
+    <div>
+      <img src="https://ibb.co/x8TH4cx" alt="image" class="imgForm">
+    </div>
+
+  </section>
+
+</div>
