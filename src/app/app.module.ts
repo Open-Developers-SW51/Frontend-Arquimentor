@@ -26,8 +26,9 @@ import {ChatComponent} from "./Arquimentor/components/chat/chat.component";
 import {ReviewsComponent} from "./Arquimentor/components/reviews/reviews.component";
 import { CardPublicationContentComponent } from './Arquimentor/components/card-publication-content/card-publication-content.component';
 import { LandigPageComponent } from './Arquimentor/components/landig-page/landig-page.component';
-
-
+import {HeaderComponent} from "./Arquimentor/components/header/header.component";
+import{LoginComponent} from "./Arquimentor/components/login/login.component";
+import {RegisterComponent} from "./Arquimentor/components/register/register.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,9 @@ import { LandigPageComponent } from './Arquimentor/components/landig-page/landig
     ChatComponent,
     ReviewsComponent,
     LandigPageComponent,
+    HeaderComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -57,10 +61,9 @@ import { LandigPageComponent } from './Arquimentor/components/landig-page/landig
     AppRoutingModule,
     FormsModule,
     MatInputModule,
-    CardPublicationContentComponent,
+    CardPublicationContentComponent
   ],
-  providers: [
-    ProfileService],
+  providers: [ProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
