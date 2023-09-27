@@ -24,6 +24,7 @@ import { MatInputModule } from '@angular/material/input';
 import {ViewProfileComponent} from "./Arquimentor/components/view-profile/view-profile.component";
 import {ChatComponent} from "./Arquimentor/components/chat/chat.component";
 import {ReviewsComponent} from "./Arquimentor/components/reviews/reviews.component";
+import { CardPublicationContentComponent } from './Arquimentor/components/card-publication-content/card-publication-content.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import {ReviewsComponent} from "./Arquimentor/components/reviews/reviews.compone
     ViewProfileComponent,
     ChatComponent,
     ReviewsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,7 @@ import {ReviewsComponent} from "./Arquimentor/components/reviews/reviews.compone
     AppRoutingModule,
     FormsModule,
     MatInputModule,
+    CardPublicationContentComponent,
   ],
   providers: [
     ProfileService],
