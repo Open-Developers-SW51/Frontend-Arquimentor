@@ -40,13 +40,6 @@ export class RegisterComponent implements OnInit{
       );
       this.isRegister = true;
 
-      this.http.post('http://localhost:3000/register', {text: newStudent}).subscribe(
-        (response) => {
-          console.log('Registro exitoso:', response);
-          this.isRegister=false;
-        }
-      )
-
     }
   }
 
