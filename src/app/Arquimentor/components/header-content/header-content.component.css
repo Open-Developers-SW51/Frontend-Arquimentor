@@ -8,7 +8,11 @@
   right: 0;
 
 }
-
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 .header{
   background-color: #144129;
   height: 80px;
