@@ -1,0 +1,39 @@
+.view-r{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+}
+
+.Background-r{
+  background-color: beige;
+}
+.Background-re{
+  background-color: darkseagreen;
+}
+
+.botones-r{
+  display: inline-block;
+  margin-right: 90px;
+  height: 60px;
+  width: 240px;
+}
+
+.fotocom-r{
+  margin-right: 370px;
+}
+
+.escribir{
+  width: 400px;
+  height: 80px;
+}
+
+.boton-enviar {
+  font-size: 18px;
+  min-width: auto;
+
+
+.mat-raised-button {
+  font-size: 18px;
+  padding: 16px 32px;
+}}

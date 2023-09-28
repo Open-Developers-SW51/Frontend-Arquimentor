@@ -14,17 +14,19 @@
   <mat-sidenav-container class="content">
     <mat-sidenav #snav [mode]="'side'">
       <mat-nav-list>
-        <a href="#home" class="link"><mat-icon>home</mat-icon> Home</a>
-        <a href="#my profile" class="link"><mat-icon>account_circle</mat-icon> My profile</a>
+        <a href="card" class="link"><mat-icon>home</mat-icon> Home</a>
+        <a href="student-profile/1" class="link"><mat-icon>account_circle</mat-icon> My profile</a>
+        <a href="mentor-profile/1" class="link"><mat-icon>people</mat-icon> Mentors</a>
 
-        <a href="#back" class="link" id="back"><mat-icon>meeting_room</mat-icon> Back </a>
+        <a href="landingpage" class="link" id="back"><mat-icon>meeting_room</mat-icon> Back </a>
       </mat-nav-list>
     </mat-sidenav>
 
     <mat-sidenav-content>
 
       <!--aqui van las etiquetas del contenido-->
-      <p>contenido aqui</p>
+      <p><router-outlet></router-outlet></p>
+
 
     </mat-sidenav-content>
   </mat-sidenav-container>
