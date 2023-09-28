@@ -1,5 +1,6 @@
+
 .container{
-  background-color: #709a8e;
+  background-color: #50715f;
 }
 h3{
   font-size: 25px;
@@ -61,7 +62,7 @@ mat-label{
   display: flex;
   flex-direction: column;
   width: 100%;
-  background: #709a8e;
+  background: #4f705e;
 }
 
 .input-box input{

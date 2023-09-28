@@ -65,6 +65,7 @@ import {RegisterComponent} from "./Arquimentor/components/register/register.comp
     AppRoutingModule,
     FormsModule,
     MatInputModule,
+    ReactiveFormsModule,
 
   ],
   providers: [ProfileService],

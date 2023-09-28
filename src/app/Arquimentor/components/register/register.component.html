@@ -4,7 +4,7 @@
   <section>
     <h3>SIGN UP</h3>
     <p>Already have an account? <span>Log in</span></p>
-    <form [formGroup]="registerForm" (ngSubmit)="register()" mat class="card" >
+    <form class="card" >
       <div class="input-box">
         <mat-label>Name</mat-label>
         <mat-form-field>
@@ -36,8 +36,6 @@
       <div class="column">
         <p>By registering you are accepting our <u>Terms of Use</u> and <u>Privacy Policy</u></p>
       </div>
-      <button type="submit" [disabled]="isRegister()">Create Account</button>
-
 
     </form>
     <div>
