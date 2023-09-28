@@ -5,10 +5,12 @@ import { MentorProfileComponent } from './Arquimentor/components/profiles/mentor
 import {ViewProfileComponent} from "./Arquimentor/components/view-profile/view-profile.component";
 import {ChatComponent} from "./Arquimentor/components/chat/chat.component";
 import {ReviewsComponent} from "./Arquimentor/components/reviews/reviews.component";
+
 import {LandigPageComponent} from "./Arquimentor/components/landig-page/landig-page.component";
 import{CardPublicationContentComponent} from "./Arquimentor/components/card-publication-content/card-publication-content.component";
 import {LoginComponent} from "./Arquimentor/components/login/login.component";
 import {RegisterComponent} from "./Arquimentor/components/register/register.component";
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/card', pathMatch: 'full' },
@@ -17,10 +19,12 @@ const routes: Routes = [
   { path: 'view', component: ViewProfileComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'reviews', component: ReviewsComponent },
+
   { path: 'landingpage', component: LandigPageComponent },
   { path: 'card', component: CardPublicationContentComponent },
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent}
+
 ];
 
 @NgModule({

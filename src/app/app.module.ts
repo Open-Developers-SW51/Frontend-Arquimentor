@@ -19,16 +19,18 @@ import { MentorProfileComponent } from './Arquimentor/components/profiles/mentor
 import { StudentProfileComponent } from './Arquimentor/components/profiles/student-profile/student-profile.component';
 import { AppRoutingModule } from './app-routing.module';
 import {ProfileService} from "./Arquimentor/services/profile-service/profile-service.service";
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import {ViewProfileComponent} from "./Arquimentor/components/view-profile/view-profile.component";
 import {ChatComponent} from "./Arquimentor/components/chat/chat.component";
 import {ReviewsComponent} from "./Arquimentor/components/reviews/reviews.component";
+
 import { CardPublicationContentComponent } from './Arquimentor/components/card-publication-content/card-publication-content.component';
 import { LandigPageComponent } from './Arquimentor/components/landig-page/landig-page.component';
 import {HeaderComponent} from "./Arquimentor/components/header/header.component";
 import{LoginComponent} from "./Arquimentor/components/login/login.component";
 import {RegisterComponent} from "./Arquimentor/components/register/register.component";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,10 +40,12 @@ import {RegisterComponent} from "./Arquimentor/components/register/register.comp
     ViewProfileComponent,
     ChatComponent,
     ReviewsComponent,
+
     LandigPageComponent,
     HeaderComponent,
     LoginComponent,
     RegisterComponent
+
   ],
   imports: [
     BrowserModule,
@@ -61,7 +65,7 @@ import {RegisterComponent} from "./Arquimentor/components/register/register.comp
     AppRoutingModule,
     FormsModule,
     MatInputModule,
-    CardPublicationContentComponent
+
   ],
   providers: [ProfileService],
   bootstrap: [AppComponent]
