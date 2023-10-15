@@ -1,0 +1,16 @@
+h1{
+  padding: 20px 60px;
+  font-size: 40px;
+  font-family: "JetBrains Mono ExtraBold";
+  color: #0E3026;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.subtitle{
+  font-size: 25px;
+  color: #565656;
+}

@@ -1,12 +1,13 @@
 .view-p{
   display: flex;
   justify-content: center;
-  height: 100%;
+  width: 100%;
   align-items: center;
 }
 
 .Background{
   background-color: beige;
+  width: 80%;
 }
 
 .botones{

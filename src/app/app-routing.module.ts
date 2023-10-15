@@ -10,10 +10,11 @@ import {LandigPageComponent} from "./Arquimentor/components/landig-page/landig-p
 import{CardPublicationContentComponent} from "./Arquimentor/components/card-publication-content/card-publication-content.component";
 import {LoginComponent} from "./Arquimentor/components/login/login.component";
 import {RegisterComponent} from "./Arquimentor/components/register/register.component";
+import {MainComponent} from "./Arquimentor/components/main/main.component";
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/card', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'student-profile/:studentId', component: StudentProfileComponent },
   { path: 'mentor-profile/:mentorId', component: MentorProfileComponent },
   { path: 'view', component: ViewProfileComponent },
@@ -21,7 +22,7 @@ const routes: Routes = [
   { path: 'reviews', component: ReviewsComponent },
 
   { path: 'landingpage', component: LandigPageComponent },
-  { path: 'card', component: CardPublicationContentComponent },
+  { path: 'home', component: MainComponent },
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent}
 
