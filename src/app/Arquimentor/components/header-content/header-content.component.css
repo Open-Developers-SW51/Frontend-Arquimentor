@@ -86,7 +86,7 @@ mat-nav-list{
 }
 
 mat-nav-list :hover{
-  background-color: #4f6f5d;
+  background-color: #6e988c;
   color: white;
 }
 
@@ -96,7 +96,7 @@ mat-nav-list :hover{
   text-align: center;
   order: 1;
   margin-top: auto;
-  background-color: #4f6f5d;
+  background-color: #6f998d;
   color: white;
   padding-right: 80px;
 }
@@ -107,5 +107,5 @@ mat-nav-list :hover{
 
 .content{
   flex: 1 0 auto;
-  background-color: #517260;
+  background-color: #6f998d;
 }

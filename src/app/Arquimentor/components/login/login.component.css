@@ -1,10 +1,13 @@
 
 .container{
-  background-color: #50715f;
+  background-color: #6e988c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Roboto, sans-serif;
 }
 h3{
   font-size: 25px;
-  font-weight: 600;
   text-align: center;
   margin: 2rem 0 0  0;
 }
@@ -27,10 +30,11 @@ u{
   cursor: pointer;
 }
 u:hover{
-  color: #0E3026;
+  color: #091f19;
 }
 
 form{
+  background-color: #6e988c;
   margin: auto;
 }
 form{
@@ -40,37 +44,38 @@ form{
 }
 
 mat-form-field {
-  margin: .5px;
-  border-radius: 62px;
+
   height: 6rem;
   padding: 0.5rem 1rem;
 }
 
-mat-label{
-  color: #0E3026;
+.input-box{/*caja label text ye imput */
+  margin:0.5rem 0;
+  display: flex;
+  width: 100%;
+  background: #6e988c;
+}
+
+mat-label{  /*texto label*/
+  color: #19281f;
   height: 70px;
   font-size: 20px;
   padding: 30px;
   font-weight: bold;
   width: 40px;
   margin-right: 40px;
+
   font-family: 'Overpass', sans-serif;
 }
 
-.input-box{
-  margin:0.5rem 0;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  background: #4f705e;
-}
+
 
 .input-box input{
   background: #fbe3c0;
   border-radius: 62px;
   height: 1rem;
   padding: 0.5rem 1rem;
-  width: 100%;
+  width: 90%;
   margin-bottom: 1rem;
   border: none;
 }
@@ -95,17 +100,10 @@ button:hover{
 .imgForm{
   display: none;
 }
-@media (min-width: 900px){
+@media (max-width: 900px){
   .container{
     display: flex;
     align-items: center;
-  }
-
-  .input-box input{
-    width: 90%;
-  }
-  section{
-    width: 65%;
   }
   .input-box{
     flex-direction: row;
@@ -132,5 +130,14 @@ button:hover{
     100% {
       transform: translateX(-200px) translateY(-50px);
     }
+  }
+  mat-label{
+    color: #0E3026;
+    font-size: 20px;
+    padding: 30px;
+    font-weight: bold;
+    width: 40px;
+    margin-right: 40px;
+    font-family: 'Overpass', sans-serif;
   }
 }

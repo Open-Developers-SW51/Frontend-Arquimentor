@@ -30,6 +30,7 @@ import { LandigPageComponent } from './Arquimentor/components/landig-page/landig
 import {HeaderComponent} from "./Arquimentor/components/header/header.component";
 import{LoginComponent} from "./Arquimentor/components/login/login.component";
 import {RegisterComponent} from "./Arquimentor/components/register/register.component";
+import { MainComponent } from './Arquimentor/components/main/main.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import {RegisterComponent} from "./Arquimentor/components/register/register.comp
     LandigPageComponent,
     HeaderComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    MainComponent
 
   ],
   imports: [
@@ -66,6 +68,7 @@ import {RegisterComponent} from "./Arquimentor/components/register/register.comp
     FormsModule,
     MatInputModule,
     ReactiveFormsModule,
+    CardPublicationContentComponent,
 
   ],
   providers: [ProfileService],
