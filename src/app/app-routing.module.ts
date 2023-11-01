@@ -11,6 +11,7 @@ import{CardPublicationContentComponent} from "./Arquimentor/components/card-publ
 import {LoginComponent} from "./Arquimentor/components/login/login.component";
 import {RegisterComponent} from "./Arquimentor/components/register/register.component";
 import {MainComponent} from "./Arquimentor/components/main/main.component";
+import {SubscriptionComponent} from "./Arquimentor/components/subscription/subscription.component";
 
 
 const routes: Routes = [
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'landingpage', component: LandigPageComponent },
   { path: 'home', component: MainComponent },
   { path: 'login', component: LoginComponent},
-  { path: 'register', component: RegisterComponent}
+  { path: 'register', component: RegisterComponent},
+  { path: 'subscription', component: SubscriptionComponent}
 
 ];
 

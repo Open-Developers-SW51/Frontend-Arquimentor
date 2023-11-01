@@ -31,6 +31,7 @@ import {HeaderComponent} from "./Arquimentor/components/header/header.component"
 import{LoginComponent} from "./Arquimentor/components/login/login.component";
 import {RegisterComponent} from "./Arquimentor/components/register/register.component";
 import { MainComponent } from './Arquimentor/components/main/main.component';
+import { SubscriptionComponent } from './Arquimentor/components/subscription/subscription.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { MainComponent } from './Arquimentor/components/main/main.component';
     HeaderComponent,
     LoginComponent,
     RegisterComponent,
-    MainComponent
+    MainComponent,
+    SubscriptionComponent
 
   ],
   imports: [
