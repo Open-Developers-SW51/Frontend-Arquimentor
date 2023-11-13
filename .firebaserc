@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "arquimentor-7e645": {
+      "hosting": {
+        "Fronent": [
+          "arquimentor-7e645"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "arquimentor-7e645"
+  }
+}
