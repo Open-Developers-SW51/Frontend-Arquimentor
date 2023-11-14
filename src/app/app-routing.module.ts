@@ -5,13 +5,14 @@ import { MentorProfileComponent } from './Arquimentor/components/profiles/mentor
 import {ViewProfileComponent} from "./Arquimentor/components/view-profile/view-profile.component";
 import {ChatComponent} from "./Arquimentor/components/chat/chat.component";
 import {ReviewsComponent} from "./Arquimentor/components/reviews/reviews.component";
+import { CreatePostComponent } from './Arquimentor/components/create-post/create-post.component';
 
 import {LandigPageComponent} from "./Arquimentor/components/landig-page/landig-page.component";
 import{CardPublicationContentComponent} from "./Arquimentor/components/card-publication-content/card-publication-content.component";
 import {LoginComponent} from "./Arquimentor/components/login/login.component";
 import {RegisterComponent} from "./Arquimentor/components/register/register.component";
 import {MainComponent} from "./Arquimentor/components/main/main.component";
-
+import {SubscriptionContentComponent} from "./Arquimentor/components/subscription-content/subscription-content.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -24,8 +25,9 @@ const routes: Routes = [
   { path: 'landingpage', component: LandigPageComponent },
   { path: 'home', component: MainComponent },
   { path: 'login', component: LoginComponent},
-  { path: 'register', component: RegisterComponent}
-
+  { path: 'register', component: RegisterComponent},
+  { path: 'subscription', component: SubscriptionContentComponent},
+  { path: 'create-post', component: CreatePostComponent}
 ];
 
 @NgModule({

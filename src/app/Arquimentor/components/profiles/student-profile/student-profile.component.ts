@@ -16,7 +16,7 @@ export class StudentProfileComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
   toggleEdit(): void {
-    this.isEditing = !this.isEditing;
+    this.isEditing = true;
   }
   ngOnInit(): void {
     const studentId = this.route.snapshot.params['studentId'];
