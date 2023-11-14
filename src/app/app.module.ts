@@ -30,8 +30,15 @@ import { LandigPageComponent } from './Arquimentor/components/landig-page/landig
 import {HeaderComponent} from "./Arquimentor/components/header/header.component";
 import{LoginComponent} from "./Arquimentor/components/login/login.component";
 import {RegisterComponent} from "./Arquimentor/components/register/register.component";
+
+import { MainComponent } from './Arquimentor/components/main/main.component';
+import {SubscriptionContentComponent} from "./Arquimentor/components/subscription-content/subscription-content.component";
+import { CreatePostComponent } from './Arquimentor/components/create-post/create-post.component';
+import {MatSlideToggleModule} from "@angular/material/slide-toggle";
+
 import { MainComponent } from './Arquimentor/components/main/main.component';
 import { SubscriptionComponent } from './Arquimentor/components/subscription/subscription.component';
+
 
 @NgModule({
   declarations: [
@@ -48,7 +55,12 @@ import { SubscriptionComponent } from './Arquimentor/components/subscription/sub
     LoginComponent,
     RegisterComponent,
     MainComponent,
+
+    SubscriptionContentComponent,
+    CreatePostComponent
+
     SubscriptionComponent
+
 
   ],
   imports: [
@@ -71,6 +83,7 @@ import { SubscriptionComponent } from './Arquimentor/components/subscription/sub
     MatInputModule,
     ReactiveFormsModule,
     CardPublicationContentComponent,
+    MatSlideToggleModule,
 
   ],
   providers: [ProfileService],

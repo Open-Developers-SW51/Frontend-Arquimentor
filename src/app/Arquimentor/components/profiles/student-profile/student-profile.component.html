@@ -1,9 +1,11 @@
 <div *ngIf="userProfile">
   <mat-card class="profile-card">
     <div class="profile-content">
+      <!--imagen-->
       <div class="profile-avatar">
         <img [src]="userProfile.photo" alt="Profile Image">
       </div>
+      <!--datos-->
       <div class="profile-details">
         <mat-card-title>
           <ng-container *ngIf="!isEditing">{{ userProfile.name }}</ng-container>
@@ -42,9 +44,13 @@
       </div>
     </div>
     <mat-card-actions>
-      <button mat-raised-button color="primary" (click)="toggleEdit()">
-        {{ isEditing ? 'Guardar' : 'Editar Perfil' }}
-      </button>
+      <ng-container *ngIf="isEditing; else showButtons" class="buttons_edit">
+        <button mat-raised-button color="primary" (click)="saveProfile()">Guardar</button>
+        <button mat-raised-button color="warn" (click)="cancelEdit()">Cancelar</button>
+      </ng-container>
+      <ng-template #showButtons>
+        <button mat-raised-button color="primary" (click)="toggleEdit()">Editar Perfil</button>
+      </ng-template>
     </mat-card-actions>
   </mat-card>
 </div>
