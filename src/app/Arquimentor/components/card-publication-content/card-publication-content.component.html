@@ -1,29 +1,34 @@
-<mat-card class="card-publication">
-  <div class="imagen_card_publication">
-    <img src="https://cdn.discordapp.com/attachments/1149549727197696111/1162962783458054195/d61697d5551718a1f624899211aed581.png?ex=653dd87e&is=652b637e&hm=8c0d1459e2c215ffa906bb78afb2c972bcc09a064eb7f1e31da76baa417072d7&" alt="Photo of a Shiba Inu">
-  </div>
-
-  <div class="icons_content">
-    <div class="icons_card">
-      <mat-icon>remove_red_eye</mat-icon>
-      25
-    </div>
-    <div class="icons_card">
-      <mat-icon>phone_in_talk</mat-icon>
-      27
-    </div>
-    <div class="icons_card">
-      <a href="view" class="link"><mat-icon>rate_review</mat-icon></a>
+<div class="content_publications">
+  <mat-card *ngFor="let publication of publications" class="card-publication">
+    <div class="imagen_card_publication">
+      <img [src]="publication.image"
+           [alt]='publication.title'
+      >
     </div>
 
-  </div>
-  <mat-card-actions class="align-center">
-    <div class="icon_asesor">
-      <mat-icon >assignment_ind</mat-icon>
-    </div>
-    <p>
-       @JuanX_24
-    </p>
+    <div class="icons_content">
+      <div class="icons_card">
+        <mat-icon>remove_red_eye</mat-icon>
+        {{publication.likes}}
+      </div>
+      <div class="icons_card">
+        <mat-icon>thumb_up</mat-icon>
+        {{publication.views}}
+      </div>
+      <div class="icons_card">
+        <a href="view" class="link"><mat-icon>rate_review</mat-icon></a>
+      </div>
 
-  </mat-card-actions>
-</mat-card>
+    </div>
+    <mat-card-actions class="align-center">
+      <div class="icon_asesor">
+        <mat-icon >assignment_ind</mat-icon>
+      </div>
+      <p>
+        @{{publication.mentor.student.studentName}}
+      </p>
+
+    </mat-card-actions>
+  </mat-card>
+</div>
+

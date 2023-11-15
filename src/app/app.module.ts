@@ -18,7 +18,7 @@ import {RouterOutlet} from "@angular/router";
 import { MentorProfileComponent } from './Arquimentor/components/profiles/mentor-profile/mentor-profile.component';
 import { StudentProfileComponent } from './Arquimentor/components/profiles/student-profile/student-profile.component';
 import { AppRoutingModule } from './app-routing.module';
-import {ProfileService} from "./Arquimentor/services/profile-service/profile-service.service";
+import {ArquimentorService} from "./Arquimentor/services/arquimentor.service";
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import {ViewProfileComponent} from "./Arquimentor/components/view-profile/view-profile.component";
@@ -30,8 +30,7 @@ import { LandigPageComponent } from './Arquimentor/components/landig-page/landig
 import {HeaderComponent} from "./Arquimentor/components/header/header.component";
 import{LoginComponent} from "./Arquimentor/components/login/login.component";
 import {RegisterComponent} from "./Arquimentor/components/register/register.component";
-
-import { MainComponent } from './Arquimentor/components/main/main.component';
+import { MainComponent } from './Arquimentor/pages/main/main.component';
 import {SubscriptionContentComponent} from "./Arquimentor/components/subscription-content/subscription-content.component";
 import { CreatePostComponent } from './Arquimentor/components/create-post/create-post.component';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
@@ -53,7 +52,7 @@ import { SubscriptionComponent } from './Arquimentor/components/subscription/sub
     LoginComponent,
     RegisterComponent,
     MainComponent,
-
+    CardPublicationContentComponent,
     SubscriptionContentComponent,
     CreatePostComponent,
 
@@ -80,11 +79,10 @@ import { SubscriptionComponent } from './Arquimentor/components/subscription/sub
     FormsModule,
     MatInputModule,
     ReactiveFormsModule,
-    CardPublicationContentComponent,
     MatSlideToggleModule
 
   ],
-  providers: [ProfileService],
+  providers: [ArquimentorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

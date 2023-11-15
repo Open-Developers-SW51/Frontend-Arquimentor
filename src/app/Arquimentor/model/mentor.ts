@@ -1,10 +1,13 @@
-export class Student {
+import {Student} from "./student";
+
+export class Mentor {
   name: string;
-  nick:string;
+  nick: string;
   photo: string;
   cellphone: string;
   email: string;
   slogan: string;
+  student: Student;
 
   constructor(
       name: string,
@@ -12,7 +15,8 @@ export class Student {
       photo: string,
       cellphone: string,
       email: string,
-      slogan: string
+      slogan: string,
+      student: Student
   ) {
     this.name = name;
     this.nick = nick;
@@ -20,5 +24,6 @@ export class Student {
     this.cellphone = cellphone;
     this.email = email;
     this.slogan = slogan;
+    this.student = student;
   }
 }

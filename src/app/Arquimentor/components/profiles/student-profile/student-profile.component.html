@@ -8,9 +8,9 @@
       <!--datos-->
       <div class="profile-details">
         <mat-card-title>
-          <ng-container *ngIf="!isEditing">{{ userProfile.name }}</ng-container>
+          <ng-container *ngIf="!isEditing">{{ userProfile.studentName }}</ng-container>
           <ng-container *ngIf="isEditing">
-            <input matInput [(ngModel)]="userProfile.name" name="name">
+            <input matInput [(ngModel)]="userProfile.studentName" name="name">
           </ng-container>
         </mat-card-title>
         <mat-card-subtitle>

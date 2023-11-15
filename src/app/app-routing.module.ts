@@ -9,7 +9,7 @@ import { CreatePostComponent } from './Arquimentor/components/create-post/create
 import {LandigPageComponent} from "./Arquimentor/components/landig-page/landig-page.component";
 import {LoginComponent} from "./Arquimentor/components/login/login.component";
 import {RegisterComponent} from "./Arquimentor/components/register/register.component";
-import {MainComponent} from "./Arquimentor/components/main/main.component";
+import {MainComponent} from "./Arquimentor/pages/main/main.component";
 
 import {SubscriptionContentComponent} from "./Arquimentor/components/subscription-content/subscription-content.component";
 

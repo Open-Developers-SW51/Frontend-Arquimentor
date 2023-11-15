@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {BaseService} from "../../shared/services/base.service";
 import { Observable } from 'rxjs';
-import {Student} from "../../interfaces/student";
-import {Mentor} from "../../interfaces/mentor";
+import {Publication} from "../model/publication";
+import {Mentor} from "../model/mentor";
+import {Student} from "../model/student";
+
 @Injectable({
   providedIn: 'root'
 })
-export class ProfileService {
-  private apiUrl = 'http://localhost:3000';
-
-    constructor(private http: HttpClient) {}
+export class ArquimentorService extends BaseService<Publication> {
+  private apiUrl: any;
+  constructor(http: HttpClient) {
+    super(http);
+    this.resourceEndpoint = '/publications';
+  }
 
   getStudentProfileById(studentId: string): Observable<Student> {
 
@@ -29,4 +34,5 @@ export class ProfileService {
 
     return this.http.put<void>(url, updatedProfile);
   }
+
 }
