@@ -1,7 +1,7 @@
 import {HttpClient, HttpResponse} from "@angular/common/http";
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import{Student} from "../../interfaces/student";
+import{Student} from "../../model/student";
 
 
 @Component({
@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit{
       const studentData= this.registerForm.value as Student;
       let newStudent: Student;
       newStudent = new Student(
-        studentData.name,
+        studentData.studentName,
         studentData.nick,
         studentData.photo,
         studentData.cellphone,

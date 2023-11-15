@@ -1,4 +1,6 @@
-
+.content_publications{
+  display: flex;
+}
 .card-publication {
   display: flex;
   flex-direction: column;

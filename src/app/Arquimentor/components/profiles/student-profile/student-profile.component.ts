@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from "../../../services/profile-service/profile-service.service";
+import { ArquimentorService } from "../../../services/arquimentor.service";
 import { ActivatedRoute } from '@angular/router';
-import { Student } from "../../../interfaces/student";
+import { Student } from "../../../model/student";
 
 @Component({
   selector: 'app-student-profile',
@@ -12,7 +12,7 @@ export class StudentProfileComponent implements OnInit {
   userProfile: Student | undefined;
     isEditing = false;
   constructor(
-    private profileService: ProfileService,
+    private profileService: ArquimentorService,
     private route: ActivatedRoute
   ) {}
   toggleEdit(): void {

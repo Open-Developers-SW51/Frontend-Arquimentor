@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProfileService } from "../../../services/profile-service/profile-service.service";
-import { Mentor } from "../../../interfaces/mentor";
+import { ArquimentorService } from "../../../services/arquimentor.service";
+import { Mentor } from "../../../model/mentor";
 
 @Component({
   selector: 'app-mentor-profile',
@@ -12,7 +12,7 @@ export class MentorProfileComponent implements OnInit {
   userProfile: Mentor | undefined;
   isEditing = false;
   constructor(
-    private profileService: ProfileService,
+    private profileService: ArquimentorService,
     private route: ActivatedRoute
   ) { }
   toggleEdit(): void {

@@ -1,20 +1,20 @@
-export class Mentor {
-  name: string;
-  nick: string;
+export class Student {
+  studentName: string;
+  nick:string;
   photo: string;
   cellphone: string;
   email: string;
   slogan: string;
 
   constructor(
-      name: string,
+    studentName: string,
       nick:string,
       photo: string,
       cellphone: string,
       email: string,
       slogan: string
   ) {
-    this.name = name;
+    this.studentName = studentName;
     this.nick = nick;
     this.photo = photo;
     this.cellphone = cellphone;
