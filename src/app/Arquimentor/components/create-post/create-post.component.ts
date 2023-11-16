@@ -4,6 +4,7 @@ import {ArquimentorService} from "../../services/arquimentor.service";
 import {Publication} from "../../model/publication";
 import {MatTableDataSource} from "@angular/material/table";
 import {DomSanitizer} from "@angular/platform-browser";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-create-post',
@@ -21,7 +22,7 @@ export class CreatePostComponent {
   preview:string="";
   archivos: any=[];
 
-  constructor(private arquimentorService: ArquimentorService,private sanitizer: DomSanitizer,) {
+  constructor(private arquimentorService: ArquimentorService,private sanitizer: DomSanitizer,private router: Router) {
     this.publication = {} as Publication;
     this.dataSource = new MatTableDataSource<any>();
     this.publication.idMentor=1;
@@ -30,18 +31,16 @@ export class CreatePostComponent {
 
   createPublication():void {
     this.publication.id=0;
-    console.log("antes de subir ",this.publication.image)
-    this.publication.image=this.archivos;
-    console.log("antes de subir archivo",this.publication.image)
-
-
     this.arquimentorService.create(this.publication).subscribe(
       (response: any) => {
         this.dataSource.data.push({...response});
         console.log(this.dataSource)
         this.dataSource.data=this.dataSource.data.map((p:Publication)=>{
         console.log(p);
+          alert("post created")
+          this.router.navigate(['/']);
         return p;
+
       });
     },
     (error) => {

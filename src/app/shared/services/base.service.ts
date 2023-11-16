@@ -41,7 +41,7 @@ export class BaseService<T> {
 
   // Delete Resource
   delete(id: any) {
-    return this.http.delete(`${this.resourcePath()}/${id}`, this.httpOptions)
+    return this.http.delete<T>(`${this.resourcePath()}/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 
@@ -58,5 +58,17 @@ export class BaseService<T> {
   }
 
 
+  getPublicationId(id: number): Observable<T>{
+    return this.http.get<T>(`${this.resourcePath()}/${id}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
 
+  incrementLike(id:any): Observable<T>{
+    return this.http.post<T>(`${this.resourcePath()}/${id}/incrementLike`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+  discountLike(id:any): Observable<T>{
+    return this.http.post<T>(`${this.resourcePath()}/${id}/discountLike`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
 }

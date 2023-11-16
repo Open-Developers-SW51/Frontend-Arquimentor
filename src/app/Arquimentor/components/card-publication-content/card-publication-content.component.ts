@@ -1,5 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {Publication} from "../../model/publication";
+import {Router} from "@angular/router";
+
 
 @Component({
   selector: 'app-card-publication-content',
@@ -8,4 +10,14 @@ import {Publication} from "../../model/publication";
 })
 export class CardPublicationContentComponent {
   @Input() publications: Array<Publication>=[];
+
+  constructor(private router:Router) {
+  }
+
+  SeeIdPublication(id:number) {
+    console.log(id)
+    this.router.navigate([`/publication/`+id]);
+  }
+
+
 }

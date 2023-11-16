@@ -21,7 +21,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {ArquimentorService} from "./Arquimentor/services/arquimentor.service";
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import {ViewProfileComponent} from "./Arquimentor/components/view-profile/view-profile.component";
+import {PublicationIdComponent} from "./Arquimentor/components/publication-id/publication-id.component";
 import {ChatComponent} from "./Arquimentor/components/chat/chat.component";
 import {ReviewsComponent} from "./Arquimentor/components/reviews/reviews.component";
 
@@ -43,7 +43,7 @@ import { SubscriptionComponent } from './Arquimentor/components/subscription/sub
     HeaderContentComponent,
     MentorProfileComponent,
     StudentProfileComponent,
-    ViewProfileComponent,
+    PublicationIdComponent,
     ChatComponent,
     ReviewsComponent,
 

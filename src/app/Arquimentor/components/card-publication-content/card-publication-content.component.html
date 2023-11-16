@@ -1,5 +1,5 @@
 <div class="content_publications">
-  <mat-card *ngFor="let publication of publications" class="card-publication">
+  <mat-card *ngFor="let publication of publications" class="card-publication" (click)="SeeIdPublication(publication.id)">
     <div class="imagen_card_publication">
       <img [src]="publication.image"
            [alt]='publication.title'
@@ -9,11 +9,11 @@
     <div class="icons_content">
       <div class="icons_card">
         <mat-icon>remove_red_eye</mat-icon>
-        {{publication.likes}}
+        {{publication.views}}
       </div>
       <div class="icons_card">
         <mat-icon>thumb_up</mat-icon>
-        {{publication.views}}
+        {{publication.likes}}
       </div>
       <div class="icons_card">
         <a href="view" class="link"><mat-icon>rate_review</mat-icon></a>
