@@ -1,11 +1,11 @@
 export class Student {
   studentName: string;
-  email: string;
+  emailAddress: string;
   password: string;
 
   constructor() {
     this.studentName = '';
-    this.email = '';
+    this.emailAddress = '';
     this.password = '';
   }
 }

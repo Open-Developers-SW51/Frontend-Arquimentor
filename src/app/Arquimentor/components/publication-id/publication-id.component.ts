@@ -8,6 +8,7 @@ import {Publication} from "../../model/publication";
   templateUrl: './publication-id.component.html',
   styleUrls: ['./publication-id.component.css']
 })
+
 export class PublicationIdComponent implements OnInit{
   publication: Publication | undefined;
   liked: boolean = false;
@@ -23,9 +24,7 @@ export class PublicationIdComponent implements OnInit{
     this.getIdPublication(publicationId);
     const userLiked = localStorage.getItem('userLiked'+publicationId);
     this.liked = userLiked === 'true';
-
   }
-
 
   private getIdPublication(publicationId: number) {
     this.arquimentorService.getPublicationId(publicationId).subscribe((response: any) => {

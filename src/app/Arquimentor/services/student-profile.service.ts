@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import {BaseService} from "../../shared/services/base.service";
-import {catchError, Observable, retry} from 'rxjs';
 import {Publication} from "../model/publication";
-import {Mentor} from "../model/mentor";
-import {Student} from "../model/student";
+import {HttpClient} from "@angular/common/http";
+import {catchError, Observable, retry} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
-export class ArquimentorService extends BaseService<Publication> {
-  private apiUrl: any;
+export class StudentProfileService extends BaseService<Publication>{
+
   constructor(http: HttpClient) {
     super(http);
-    this.resourceEndpoint = '/publications';
+    this.resourceEndpoint = '/studentprofiles';
   }
-  getPublicationId(id: number){
+
+  getStudentProfileId(id: number){
     return this.http.get(`${this.resourcePath()}/${id}`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
+
 }

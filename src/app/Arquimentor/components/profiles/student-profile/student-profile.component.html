@@ -1,36 +1,36 @@
 <div *ngIf="userProfile">
-  <!--<mat-card class="profile-card">
+  <mat-card class="profile-card">
     <div class="profile-content">
 
       <div class="profile-avatar">
-        <img [src]="userProfile.photo" alt="Profile Image">
+        <img [src]="userProfile.userProfilePhoto" alt="Profile Image">
       </div>
 
       <div class="profile-details">
         <mat-card-title>
-          <ng-container *ngIf="!isEditing">{{ userProfile.studentName }}</ng-container>
-          <ng-container *ngIf="isEditing">
-            <input matInput [(ngModel)]="userProfile.studentName" name="name">
+          <ng-container *ngIf="!isEditing">{{ userProfile.student.studentName }}</ng-container>
+          <ng-container *ngIf="isEditing">{{ userProfile.student.studentName }}
+            <!--<input matInput [(ngModel)]="userProfile.student.studentName" name="name">-->
           </ng-container>
         </mat-card-title>
-        <mat-card-subtitle>
+        <mat-card-content>
           <ng-container *ngIf="!isEditing">{{ userProfile.nick }}</ng-container>
           <ng-container *ngIf="isEditing">
             <input matInput [(ngModel)]="userProfile.nick" name="nick">
           </ng-container>
-        </mat-card-subtitle>
+        </mat-card-content>
         <mat-card-content>
           <mat-icon>email</mat-icon>
-          <ng-container *ngIf="!isEditing">{{ userProfile.email }}</ng-container>
-          <ng-container *ngIf="isEditing">
-            <input matInput [(ngModel)]="userProfile.email" name="email">
+          <ng-container *ngIf="!isEditing">{{ userProfile.student.emailAddress }}</ng-container>
+          <ng-container *ngIf="isEditing">{{ userProfile.student.emailAddress }}
+            <!--<input matInput [(ngModel)]="userProfile.student.emailAddress" name="email">-->
           </ng-container>
         </mat-card-content>
         <mat-card-content>
           <mat-icon>phone</mat-icon>
-          <ng-container *ngIf="!isEditing">{{ userProfile.cellphone }}</ng-container>
+          <ng-container *ngIf="!isEditing">{{ userProfile.phoneNumber }}</ng-container>
           <ng-container *ngIf="isEditing">
-            <input matInput [(ngModel)]="userProfile.cellphone" name="cellphone">
+            <input matInput [(ngModel)]="userProfile.phoneNumber" name="cellphone">
           </ng-container>
         </mat-card-content>
         <mat-card-content>
@@ -40,7 +40,6 @@
             <input matInput [(ngModel)]="userProfile.slogan" name="slogan">
           </ng-container>
         </mat-card-content>
-
       </div>
     </div>
     <mat-card-actions>
@@ -52,5 +51,5 @@
         <button mat-raised-button color="primary" (click)="toggleEdit()">Editar Perfil</button>
       </ng-template>
     </mat-card-actions>
-  </mat-card>-->
+  </mat-card>
 </div>

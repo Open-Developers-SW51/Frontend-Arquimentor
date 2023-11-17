@@ -29,7 +29,7 @@ export class BaseService<T> {
     return throwError(() => new Error('Something happened with request, please try again later.'));
   }
 
-  private resourcePath(): string {
+  protected resourcePath(): string {
     return `${this.basePath}${this.resourceEndpoint}`;
   }
 
@@ -49,6 +49,7 @@ export class BaseService<T> {
   update(id: any, item: any) {
     return this.http.put<T>(`${this.resourcePath()}/${id}`, JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
+
   }
 
   // Get All Resources
@@ -58,10 +59,9 @@ export class BaseService<T> {
   }
 
 
-  getPublicationId(id: number): Observable<T>{
-    return this.http.get<T>(`${this.resourcePath()}/${id}`, this.httpOptions)
-      .pipe(retry(2), catchError(this.handleError));
-  }
+
+
+
 
   incrementLike(id:any): Observable<T>{
     return this.http.post<T>(`${this.resourcePath()}/${id}/incrementLike`, this.httpOptions)
