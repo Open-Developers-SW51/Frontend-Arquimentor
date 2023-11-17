@@ -14,6 +14,7 @@ export class PublicationIdComponent implements OnInit{
   liked: boolean = false;
   linkCount:number | undefined=0;
   viewCount:number | undefined=0;
+
   constructor(    private arquimentorService: ArquimentorService,
                   private route: ActivatedRoute,private router: Router,private location: Location) {
   }
@@ -24,6 +25,7 @@ export class PublicationIdComponent implements OnInit{
     this.getIdPublication(publicationId);
     const userLiked = localStorage.getItem('userLiked'+publicationId);
     this.liked = userLiked === 'true';
+
   }
 
   private getIdPublication(publicationId: number) {
@@ -88,5 +90,11 @@ export class PublicationIdComponent implements OnInit{
       // @ts-ignore
       this.linkCount= this.linkCount-1;
     }
+  }
+
+  OpenModal() {
+    const modal=document.querySelector("#modal");
+      // @ts-ignore
+      modal.showModal();
   }
 }

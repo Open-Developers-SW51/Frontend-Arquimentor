@@ -2,8 +2,15 @@
   <mat-card class="profile-card">
     <div class="profile-content">
 
-      <div class="profile-avatar">
+      <div class="profile-avatar" *ngIf="!isEditing">
         <img [src]="userProfile.userProfilePhoto" alt="Profile Image">
+      </div>
+      <div class="profile-avatar" *ngIf="isEditing">
+        <img [src]="images[0] ? images[0]:userProfile.userProfilePhoto" alt="Profile Image">
+        <div class="pie">
+          <input type="file" name="foto" id="foto" (change)="onFileSelected($event)" accept=".png, .jpeg, .jpg" multiple>
+          <label for="foto" id="agregar">Edit photo profile</label>
+        </div>
       </div>
 
       <div class="profile-details">

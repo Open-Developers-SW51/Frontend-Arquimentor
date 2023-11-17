@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import {StudentProfile} from "../../../model/student-profile";
 import {StudentProfileService} from "../../../services/student-profile.service";
 import {MatTableDataSource} from "@angular/material/table";
+import {FileUploadService} from "../../../services/file-upload.service";
 
 @Component({
   selector: 'app-student-profile',
@@ -14,9 +15,12 @@ export class StudentProfileComponent implements OnInit {
     isEditing = false;
     dataSource: MatTableDataSource<any>;
     idRouter:Number | undefined;
+  images: any = [];
+
   constructor(
     private studentProfileService: StudentProfileService,
-    public route: ActivatedRoute
+    public route: ActivatedRoute,
+    private fileUploadService: FileUploadService
 
   ) {
     this.dataSource = new MatTableDataSource<any>();
@@ -32,6 +36,8 @@ export class StudentProfileComponent implements OnInit {
 
   saveProfile(): void {
    this.isEditing = false;
+    // @ts-ignore
+    this.userProfile.userProfilePhoto = this.urlImage;
       this.studentProfileService.update(this.userProfile?.id,this.userProfile).subscribe(
         (response: any) => {
           this.dataSource.data.push({...response});
@@ -65,4 +71,22 @@ export class StudentProfileComponent implements OnInit {
   }
 
 
+  onFileSelected(event: any): void {
+    let archivoCapturado = event.target.files;
+
+    for (let i = 0; i < archivoCapturado.length; i++) {
+      let reader = new FileReader();
+      reader.readAsDataURL(archivoCapturado[0]);
+
+      reader.onloadend = () => {
+        console.log(reader.result);
+        this.images.push(reader.result);
+        this.fileUploadService.submitImage(this.userProfile?.id + " " + Date.now(), reader.result).then(urlImage => {
+          console.log(urlImage);
+          // @ts-ignore
+          this.urlImage = urlImage;
+        });
+      }
+    }
+  }
 }

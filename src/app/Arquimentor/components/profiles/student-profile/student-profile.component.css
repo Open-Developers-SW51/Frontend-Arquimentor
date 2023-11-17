@@ -21,6 +21,18 @@
   margin: 20px;
   border: 2px solid #e8b568;
 }
+.pie{
+  text-align: center;
+  text-shadow: 0px 0px 1px ;
+  padding: 5px;
+  font-size: 25px;
+}
+.pie input#foto{
+  display: none;
+}
+.pie label:hover{
+  cursor: pointer;
+}
 
 mat-card-title {
   font-size: 24px;
