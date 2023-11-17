@@ -11,15 +11,19 @@ import {Publication} from "../../model/publication";
 export class PublicationIdComponent implements OnInit{
   publication: Publication | undefined;
   liked: boolean = false;
+  linkCount:number | undefined=0;
+  viewCount:number | undefined=0;
   constructor(    private arquimentorService: ArquimentorService,
                   private route: ActivatedRoute,private router: Router,private location: Location) {
   }
 
   ngOnInit(): void {
     const publicationId = this.route.snapshot.params['publicationId'];
+    this.arquimentorService.incrementView(publicationId).subscribe();
     this.getIdPublication(publicationId);
     const userLiked = localStorage.getItem('userLiked'+publicationId);
     this.liked = userLiked === 'true';
+
   }
 
 
@@ -27,6 +31,10 @@ export class PublicationIdComponent implements OnInit{
     this.arquimentorService.getPublicationId(publicationId).subscribe((response: any) => {
       this.publication = response;
       console.log(this.publication);
+      this.linkCount= this.publication?.likes;
+      this.viewCount= this.publication?.views;
+      // @ts-ignore
+      this.viewCount= this.viewCount+1;
     });
   }
 
@@ -61,6 +69,8 @@ export class PublicationIdComponent implements OnInit{
         });
       localStorage.setItem('userLiked'+id, 'true');
       this.liked = true;
+      // @ts-ignore
+      this.linkCount= this.linkCount+1;
     }
   }
 
@@ -76,6 +86,8 @@ export class PublicationIdComponent implements OnInit{
         });
       localStorage.setItem('userLiked'+id, 'false');
       this.liked = false;
+      // @ts-ignore
+      this.linkCount= this.linkCount-1;
     }
   }
 }

@@ -1,11 +1,11 @@
 <div *ngIf="userProfile">
-  <mat-card class="profile-card">
+  <!--<mat-card class="profile-card">
     <div class="profile-content">
-      <!--imagen-->
+
       <div class="profile-avatar">
         <img [src]="userProfile.photo" alt="Profile Image">
       </div>
-      <!--datos-->
+
       <div class="profile-details">
         <mat-card-title>
           <ng-container *ngIf="!isEditing">{{ userProfile.studentName }}</ng-container>
@@ -40,7 +40,7 @@
             <input matInput [(ngModel)]="userProfile.slogan" name="slogan">
           </ng-container>
         </mat-card-content>
-        <!-- Agrega más campos comunes según tus necesidades -->
+
       </div>
     </div>
     <mat-card-actions>
@@ -52,5 +52,5 @@
         <button mat-raised-button color="primary" (click)="toggleEdit()">Editar Perfil</button>
       </ng-template>
     </mat-card-actions>
-  </mat-card>
+  </mat-card>-->
 </div>

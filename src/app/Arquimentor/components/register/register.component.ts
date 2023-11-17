@@ -28,16 +28,6 @@ export class RegisterComponent implements OnInit{
   register(): void {
     if (this.registerForm && this.registerForm.valid) {
       const studentData= this.registerForm.value as Student;
-      let newStudent: Student;
-      newStudent = new Student(
-        studentData.studentName,
-        studentData.nick,
-        studentData.photo,
-        studentData.cellphone,
-        studentData.email,
-        studentData.slogan
-
-      );
       this.isRegister = true;
 
     }

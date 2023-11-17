@@ -1,4 +1,5 @@
 import {Mentor} from "./mentor";
+import {MentorProfile} from "./mentor-profile";
 
 export class Publication {
   id : number;
@@ -7,8 +8,8 @@ export class Publication {
   image: string[];
   views: number;
   likes: number;
-  mentor:Mentor;
-  idMentor:number;
+  mentorProfile:MentorProfile;
+  mentorProfileId:number;
 
   constructor(
     id: number,
@@ -17,8 +18,8 @@ export class Publication {
     image: string[],
     views: number,
     likes: number,
-    mentor:Mentor,
-    idMentor:number
+    mentorProfile:MentorProfile,
+    mentorProfileId:number
   ) {
     this.id = id;
     this.title = title;
@@ -26,8 +27,8 @@ export class Publication {
     this.image = image;
     this.views = views;
     this.likes = likes;
-    this.mentor = mentor;
-    this.idMentor = idMentor;
+    this.mentorProfile = mentorProfile;
+    this.mentorProfileId = mentorProfileId;
   }
 
 }

@@ -71,4 +71,8 @@ export class BaseService<T> {
     return this.http.post<T>(`${this.resourcePath()}/${id}/discountLike`, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
+  incrementView(id:any): Observable<T>{
+    return this.http.post<T>(`${this.resourcePath()}/${id}/incrementView`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
+  }
 }

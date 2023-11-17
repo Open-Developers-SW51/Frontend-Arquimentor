@@ -13,6 +13,7 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import {MatCardModule} from "@angular/material/card";
 import {MatMenuModule} from "@angular/material/menu";
 import {NgOptimizedImage} from "@angular/common";
+
 import { HeaderContentComponent } from './Arquimentor/components/header-content/header-content.component';
 import {RouterOutlet} from "@angular/router";
 import { MentorProfileComponent } from './Arquimentor/components/profiles/mentor-profile/mentor-profile.component';

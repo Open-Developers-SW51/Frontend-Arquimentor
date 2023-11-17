@@ -16,20 +16,4 @@ export class ArquimentorService extends BaseService<Publication> {
     this.resourceEndpoint = '/publications';
   }
 
-
-  getStudentProfileById(studentId: string): Observable<Student> {
-    const url = `${this.apiUrl}/students/${studentId}`;
-    return this.http.get<Student>(url);
-  }
-  getMentorProfileById(mentorId: string): Observable<Mentor> {
-    const url = `${this.apiUrl}/mentors/${mentorId}`;
-    return this.http.get<Mentor>(url);
-  }
-  updateMentorProfile(mentorId: string, updatedProfile: Mentor): Observable<void> {
-    const url = `${this.apiUrl}/mentors/${mentorId}`;
-    return this.http.put<void>(url, updatedProfile);
-  }
-
-
-
 }

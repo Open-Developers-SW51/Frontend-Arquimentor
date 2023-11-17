@@ -3,8 +3,8 @@ import {ThemePalette} from "@angular/material/core";
 import {ArquimentorService} from "../../services/arquimentor.service";
 import {Publication} from "../../model/publication";
 import {MatTableDataSource} from "@angular/material/table";
-import {DomSanitizer} from "@angular/platform-browser";
 import {Router} from "@angular/router";
+import {FileUploadService} from "../../services/file-upload.service";
 
 @Component({
   selector: 'app-create-post',
@@ -19,67 +19,52 @@ export class CreatePostComponent {
   dataSource: MatTableDataSource<any>;
   publication: Publication;
   //imagen
-  preview:string="";
-  archivos: any=[];
+  images: any = [];
 
-  constructor(private arquimentorService: ArquimentorService,private sanitizer: DomSanitizer,private router: Router) {
+  constructor(private arquimentorService: ArquimentorService, private router: Router, private fileUploadService: FileUploadService) {
     this.publication = {} as Publication;
     this.dataSource = new MatTableDataSource<any>();
-    this.publication.idMentor=1;
-    this.publication.image=[];
+    this.publication.mentorProfileId = 1;
+    this.publication.image = [];
   }
 
-  createPublication():void {
-    this.publication.id=0;
+  createPublication(): void {
+    this.publication.id = 0;
     this.arquimentorService.create(this.publication).subscribe(
       (response: any) => {
         this.dataSource.data.push({...response});
         console.log(this.dataSource)
-        this.dataSource.data=this.dataSource.data.map((p:Publication)=>{
-        console.log(p);
+        this.dataSource.data = this.dataSource.data.map((p: Publication) => {
+          console.log(p);
           alert("post created")
           this.router.navigate(['/']);
-        return p;
+          return p;
 
-      });
-    },
-    (error) => {
-      console.error('Error en la solicitud:', error);
-    }
+        });
+      },
+      (error) => {
+        console.error('Error en la solicitud:', error);
+      }
     );
   }
 
-  onFileSelected(event: any):void {
-    const archivoCapturado = event.target.files[0];
-    this.extraerBase64(archivoCapturado).then((imagen : any) =>{
-      this.preview=imagen.base;
-      console.log(imagen);
-      this.publication.image=[archivoCapturado as string];
-      console.log(this.publication.image);
-    })
-    this.archivos.push(archivoCapturado);
+  onFileSelected(event: any): void {
+    let archivoCapturado = event.target.files;
 
-  }
+    for (let i = 0; i < archivoCapturado.length; i++) {
+      let reader = new FileReader();
+      reader.readAsDataURL(archivoCapturado[0]);
 
-  // @ts-ignore
-  extraerBase64=async ($event: any)=> new Promise((resolve, reject)=>{
-    try {
-      const usafeImg = window.URL.createObjectURL($event);
-      const image = this.sanitizer.bypassSecurityTrustUrl(usafeImg);
-      const reader = new FileReader();
-      reader.readAsDataURL($event);
-      reader.onload = ()=>{
-        resolve({
-          base: reader.result
+      reader.onloadend = () => {
+        console.log(reader.result);
+        this.images.push(reader.result);
+        this.fileUploadService.submitImage(this.publication.id + " " + Date.now(), reader.result).then(urlImage => {
+          console.log(urlImage);
+          //asociar de una vez la imagen al post
+            // @ts-ignore
+          this.publication.image.push(urlImage);
         });
-      };
-      reader.onerror = error=>{
-        resolve({
-          base: null
-        });
-      };
-    } catch (e){
-      return null;
+      }
     }
-  })
+  }
 }
