@@ -13,6 +13,7 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import {MatCardModule} from "@angular/material/card";
 import {MatMenuModule} from "@angular/material/menu";
 import {NgOptimizedImage} from "@angular/common";
+
 import { HeaderContentComponent } from './Arquimentor/components/header-content/header-content.component';
 import {RouterOutlet} from "@angular/router";
 import { MentorProfileComponent } from './Arquimentor/components/profiles/mentor-profile/mentor-profile.component';
@@ -21,7 +22,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {ArquimentorService} from "./Arquimentor/services/arquimentor.service";
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import {ViewProfileComponent} from "./Arquimentor/components/view-profile/view-profile.component";
+import {PublicationIdComponent} from "./Arquimentor/components/publication-id/publication-id.component";
 import {ChatComponent} from "./Arquimentor/components/chat/chat.component";
 import {ReviewsComponent} from "./Arquimentor/components/reviews/reviews.component";
 
@@ -43,7 +44,7 @@ import { SubscriptionComponent } from './Arquimentor/components/subscription/sub
     HeaderContentComponent,
     MentorProfileComponent,
     StudentProfileComponent,
-    ViewProfileComponent,
+    PublicationIdComponent,
     ChatComponent,
     ReviewsComponent,
 

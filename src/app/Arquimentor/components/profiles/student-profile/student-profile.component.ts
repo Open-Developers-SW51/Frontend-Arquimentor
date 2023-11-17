@@ -21,21 +21,6 @@ export class StudentProfileComponent implements OnInit {
   ngOnInit(): void {
     const studentId = this.route.snapshot.params['studentId'];
 
-
-    if (studentId !== null) {
-
-      this.profileService.getStudentProfileById(studentId).subscribe(
-        (student: Student) => {
-
-          this.userProfile = student;
-        },
-        (error) => {
-          console.error('Error al obtener el perfil del estudiante:', error);
-        }
-      );
-    } else {
-      console.error('studentId es nulo. No se puede obtener el perfil del estudiante.');
-    }
   }
 
   saveProfile(): void {

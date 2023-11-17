@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {BaseService} from "../../shared/services/base.service";
-import { Observable } from 'rxjs';
+import {catchError, Observable, retry} from 'rxjs';
 import {Publication} from "../model/publication";
 import {Mentor} from "../model/mentor";
 import {Student} from "../model/student";
@@ -14,25 +14,6 @@ export class ArquimentorService extends BaseService<Publication> {
   constructor(http: HttpClient) {
     super(http);
     this.resourceEndpoint = '/publications';
-  }
-
-  getStudentProfileById(studentId: string): Observable<Student> {
-
-    const url = `${this.apiUrl}/students/${studentId}`;
-    return this.http.get<Student>(url);
-  }
-  getMentorProfileById(mentorId: string): Observable<Mentor> {
-
-    const url = `${this.apiUrl}/mentors/${mentorId}`;
-    return this.http.get<Mentor>(url);
-  }
-
-  updateMentorProfile(mentorId: string, updatedProfile: Mentor): Observable<void> {
-
-    const url = `${this.apiUrl}/mentors/${mentorId}`;
-
-
-    return this.http.put<void>(url, updatedProfile);
   }
 
 }
