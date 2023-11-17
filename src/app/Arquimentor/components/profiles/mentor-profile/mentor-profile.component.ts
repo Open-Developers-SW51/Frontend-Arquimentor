@@ -16,6 +16,7 @@ export class MentorProfileComponent implements OnInit {
   dataSource: MatTableDataSource<any>;
   idRouter:Number | undefined;
   images: any = [];
+  urlImage: string | undefined;
 
   constructor(
     private mentorProfileService: MentorProfileService,
@@ -35,6 +36,9 @@ export class MentorProfileComponent implements OnInit {
 
   saveProfile(): void {
     this.isEditing = false;
+    // @ts-ignore
+    this.userProfile.userProfilePhoto = this.urlImage;
+    console.log("para subir "+ this.userProfile);
     this.mentorProfileService.update(this.userProfile?.id,this.userProfile).subscribe(
       (response: any) => {
         this.dataSource.data.push({...response});
@@ -78,9 +82,8 @@ export class MentorProfileComponent implements OnInit {
         this.images.push(reader.result);
         this.fileUploadService.submitImage(this.userProfile?.id + " " + Date.now(), reader.result).then(urlImage => {
           console.log(urlImage);
-          //asociar de una vez la imagen al post
           // @ts-ignore
-          //this.userProfile?.userProfilePhoto=urlImage;
+          this.urlImage = urlImage;
         });
       }
     }
