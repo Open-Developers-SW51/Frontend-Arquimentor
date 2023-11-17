@@ -18,8 +18,8 @@ import {SubscriptionComponent} from "./Arquimentor/components/subscription/subsc
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'student-profile/:studentId', component: StudentProfileComponent },
-  { path: 'mentor-profile/:mentorId', component: MentorProfileComponent },
+  { path: 'student-profile/:studentProfileId', component: StudentProfileComponent },
+  { path: 'mentor-profile/:mentorProfileId', component: MentorProfileComponent },
   { path: 'publication/:publicationId', component: PublicationIdComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'landingpage', component: LandigPageComponent },
