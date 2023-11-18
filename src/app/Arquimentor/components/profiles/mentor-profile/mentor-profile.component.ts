@@ -16,6 +16,7 @@ export class MentorProfileComponent implements OnInit {
   dataSource: MatTableDataSource<any>;
   idRouter:Number | undefined;
   images: any = [];
+  imagesC: any = [];
   urlImage: string | undefined;
 
   constructor(
@@ -35,9 +36,13 @@ export class MentorProfileComponent implements OnInit {
   }
 
   saveProfile(): void {
+
     this.isEditing = false;
-    // @ts-ignore
-    this.userProfile.userProfilePhoto = this.urlImage;
+    if (this.urlImage != undefined) {
+      // @ts-ignore
+      this.userProfile.userProfilePhoto = this.urlImage;
+    }
+
     console.log("para subir "+ this.userProfile);
     this.mentorProfileService.update(this.userProfile?.id,this.userProfile).subscribe(
       (response: any) => {
@@ -75,7 +80,7 @@ export class MentorProfileComponent implements OnInit {
 
     for (let i = 0; i < archivoCapturado.length; i++) {
       let reader = new FileReader();
-      reader.readAsDataURL(archivoCapturado[0]);
+      reader.readAsDataURL(archivoCapturado[i]);
 
       reader.onloadend = () => {
         console.log(reader.result);
@@ -84,6 +89,23 @@ export class MentorProfileComponent implements OnInit {
           console.log(urlImage);
           // @ts-ignore
           this.urlImage = urlImage;
+        });
+      }
+    }
+  }
+
+  onCertificatesSelect(event: any): void {
+    let archivoCapturado = event.target.files;
+
+    for (let i = 0; i < archivoCapturado.length; i++) {
+      let reader = new FileReader();
+      reader.readAsDataURL(archivoCapturado[i]);
+      reader.onloadend = () => {
+        this.imagesC.push(reader.result);
+        this.fileUploadService.submitImage(this.userProfile?.id + " " + Date.now(), reader.result).then(urlImage => {
+          console.log(urlImage);
+          // @ts-ignore
+          this.userProfile?.certificates.push(urlImage);
         });
       }
     }

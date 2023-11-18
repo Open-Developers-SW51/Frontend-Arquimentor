@@ -67,4 +67,8 @@ export class CreatePostComponent {
       }
     }
   }
+
+  cancelEdit() {
+    this.router.navigate(['/']);
+  }
 }

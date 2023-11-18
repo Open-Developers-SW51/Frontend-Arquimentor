@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./appointment.component.css']
 })
 export class AppointmentComponent {
+  showOverlay = false;
+  openOverlay() {
+    this.showOverlay = true;
+  }
 
+  closeOverlay() {
+    this.showOverlay = false;
+  }
 }

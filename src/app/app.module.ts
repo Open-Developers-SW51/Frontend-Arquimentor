@@ -37,6 +37,7 @@ import { CreatePostComponent } from './Arquimentor/components/create-post/create
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import { SubscriptionComponent } from './Arquimentor/components/subscription/subscription.component';
 import { AppointmentComponent } from './Arquimentor/components/appointment/appointment.component';
+import { InformationWindowComponent } from './Arquimentor/components/information-window/information-window.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { AppointmentComponent } from './Arquimentor/components/appointment/appoi
     CreatePostComponent,
 
     SubscriptionComponent,
-      AppointmentComponent
+      AppointmentComponent,
+      InformationWindowComponent
 
 
   ],

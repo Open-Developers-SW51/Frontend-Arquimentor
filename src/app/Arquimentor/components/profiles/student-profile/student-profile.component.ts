@@ -16,6 +16,7 @@ export class StudentProfileComponent implements OnInit {
     dataSource: MatTableDataSource<any>;
     idRouter:Number | undefined;
   images: any = [];
+  urlImage: string | undefined;
 
   constructor(
     private studentProfileService: StudentProfileService,
@@ -36,8 +37,11 @@ export class StudentProfileComponent implements OnInit {
 
   saveProfile(): void {
    this.isEditing = false;
-    // @ts-ignore
-    this.userProfile.userProfilePhoto = this.urlImage;
+    if (this.urlImage != undefined) {
+      // @ts-ignore
+      this.userProfile.userProfilePhoto = this.urlImage;
+    }
+
       this.studentProfileService.update(this.userProfile?.id,this.userProfile).subscribe(
         (response: any) => {
           this.dataSource.data.push({...response});

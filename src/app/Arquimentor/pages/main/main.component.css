@@ -14,10 +14,17 @@ h1{
   font-size: 25px;
   color: #565656;
 }
+.content-publication{
+  display: flex;
+  flex-wrap: wrap;
+
+  padding: 20px;
+}
 .content-button{
   display: flex;
   justify-content: end;
 }
+
 .buttons{
   background-color: #e1bc85;
   border: 0;
@@ -27,5 +34,9 @@ h1{
   font-family: Arial, sans-serif;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   margin: 40px;
+  cursor: pointer;
+}
+.buttons:hover{
+  background-color: #e8b568;
   cursor: pointer;
 }
