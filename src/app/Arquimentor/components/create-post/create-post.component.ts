@@ -53,7 +53,7 @@ export class CreatePostComponent {
 
     for (let i = 0; i < archivoCapturado.length; i++) {
       let reader = new FileReader();
-      reader.readAsDataURL(archivoCapturado[0]);
+      reader.readAsDataURL(archivoCapturado[i]);
 
       reader.onloadend = () => {
         console.log(reader.result);
@@ -66,5 +66,9 @@ export class CreatePostComponent {
         });
       }
     }
+  }
+
+  cancelEdit() {
+    this.router.navigate(['/']);
   }
 }

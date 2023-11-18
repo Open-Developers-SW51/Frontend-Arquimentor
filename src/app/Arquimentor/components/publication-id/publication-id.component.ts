@@ -97,4 +97,9 @@ export class PublicationIdComponent implements OnInit{
       // @ts-ignore
       modal.showModal();
   }
+
+  routerAppointment() {
+    this.router.navigate(['/appointment']);
+
+  }
 }
