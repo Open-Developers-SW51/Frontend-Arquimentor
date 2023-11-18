@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {LayoutModule} from "@angular/cdk/layout";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
@@ -38,6 +38,7 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import { SubscriptionComponent } from './Arquimentor/components/subscription/subscription.component';
 import { AppointmentComponent } from './Arquimentor/components/appointment/appointment.component';
 import { InformationWindowComponent } from './Arquimentor/components/information-window/information-window.component';
+import {AuthInterceptor} from "./Arquimentor/helpers/auth.interceptor";
 
 
 @NgModule({
@@ -87,7 +88,9 @@ import { InformationWindowComponent } from './Arquimentor/components/information
     MatSlideToggleModule
 
   ],
-  providers: [ArquimentorService],
+  providers: [ArquimentorService, {
+  provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

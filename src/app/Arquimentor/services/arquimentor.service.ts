@@ -8,7 +8,6 @@ import {Publication} from "../model/publication";
   providedIn: 'root'
 })
 export class ArquimentorService extends BaseService<Publication> {
-  private apiUrl: any;
   constructor(http: HttpClient) {
     super(http);
     this.resourceEndpoint = '/publications';

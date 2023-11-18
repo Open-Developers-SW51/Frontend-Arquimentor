@@ -1,7 +1,10 @@
-import {HttpClient, HttpResponse} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import{Student} from "../../model/student";
+import {FormBuilder} from "@angular/forms";
+import {SingUp} from "../../model/sing-up";
+import {CreateAccountService} from "../../services/create-account.service";
+import {MatTableDataSource} from "@angular/material/table";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -10,27 +13,37 @@ import{Student} from "../../model/student";
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit{
-  registerForm: FormGroup | undefined;
-  isRegister = false;
+  //registerForm: FormGroup | undefined;
+  singUpM :SingUp ;
+  dataSource: MatTableDataSource<any>;
   private http: any;
-
-  constructor(private formBuilder: FormBuilder,  http: HttpClient) {
+  constructor(
+    private createAccountService: CreateAccountService,
+    private router: Router
+  ) {
+    this.singUpM = {} as SingUp;
+    this.dataSource = new MatTableDataSource<any>();
   }
   ngOnInit(): void {
-    this.registerForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      username: ['', Validators.required],
-      email: ['', Validators.required, Validators.email],
-      password: ['', Validators.required, Validators.minLength(5)]
-    });
+    this.singUpM.roles= ["ROLE_USER"];
   }
 
-  register(): void {
-    if (this.registerForm && this.registerForm.valid) {
-      const studentData= this.registerForm.value as Student;
-      this.isRegister = true;
-
-    }
+  registerAccount(/*form: NgForm*/): void {
+    this.singUpM.id = 0;
+    this.createAccountService.singUp(this.singUpM).subscribe(
+      (response: any) => {
+        this.dataSource.data.push({...response});
+        console.log(this.dataSource)
+        this.dataSource.data = this.dataSource.data.map((p: SingUp) => {
+          console.log(p);
+          alert("user created")
+          this.router.navigate(['/']);
+          return p;
+        });
+      },
+      (error) => {
+        console.error('Error en la solicitud:', error);
+      }
+    );
   }
-
 }

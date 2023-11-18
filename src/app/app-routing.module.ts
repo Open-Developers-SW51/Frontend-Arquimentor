@@ -14,17 +14,19 @@ import {SubscriptionContentComponent} from "./Arquimentor/components/subscriptio
 
 import {SubscriptionComponent} from "./Arquimentor/components/subscription/subscription.component";
 import {AppointmentComponent} from "./Arquimentor/components/appointment/appointment.component";
+// @ts-ignore
+import {AuthGuard} from "./Arquimentor/helpers/auth.guard.ts";
 
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'student-profile/:studentProfileId', component: StudentProfileComponent },
   { path: 'mentor-profile/:mentorProfileId', component: MentorProfileComponent },
-  { path: 'publication/:publicationId', component: PublicationIdComponent },
+  { path: 'publication/:publicationId', component: PublicationIdComponent,canActivate: [AuthGuard] },
   { path: 'chat', component: ChatComponent },
   { path: 'landingpage', component: LandigPageComponent },
-  { path: 'home', component: MainComponent },
+  { path: 'home', component: MainComponent,canActivate: [AuthGuard]},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'appointment', component: AppointmentComponent},

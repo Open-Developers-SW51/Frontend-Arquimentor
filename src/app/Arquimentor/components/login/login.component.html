@@ -1,34 +1,26 @@
-<app-header></app-header>
-
-<div class="container">
-  <div class="section">
-    <h3>SIGN IN</h3>
-    <form mat class="card" >
-      <div class="input-box">
-        <mat-label>Email address</mat-label>
-        <mat-form-field>
-          <input  type="email" placeholder="Email" >
+<div class="content-add-post">
+  <form (ngSubmit)="singInAccount()" class="form-add-post">
+    <a href="register">create account</a>
+    <div class="add-post-right">
+      <!-- Título del post (podrías agregar más campos si es necesario) -->
+      <div class="post-title">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Login" [(ngModel)]="singIn.username" name="postTitle" required>
         </mat-form-field>
       </div>
-      <div class="input-box">
-        <mat-label>Password</mat-label>
-        <mat-form-field>
-          <input matInput type="password" placeholder="Password" >
+      <div class="post-description">
+        <!-- Descripción del post -->
+        <mat-form-field class="full-width">
+          <input type="password" matInput placeholder="Password" [(ngModel)]="singIn.password" name="postDescription" required>
         </mat-form-field>
       </div>
-      <!--<a href="/card"><button mat-button  type="submit">Log in</button></a>-->
 
-      <div class="column">
-        <p><u>Forgot your Password?</u></p>
-        <p>No Account Yet? <u>Create Account</u></p>
+      <!-- Botón para enviar el post -->
+      <div class="content-button">
+        <button type="submit" mat-raised-button color="primary">Login</button>
       </div>
-    </form>
-    <a href="home"><button mat-button  type="submit">Log in</button></a>
-
-
-  </div>
-
-
+    </div>
+  </form>
 </div>
 
 
