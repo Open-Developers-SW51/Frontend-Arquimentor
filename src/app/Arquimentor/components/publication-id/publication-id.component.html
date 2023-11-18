@@ -8,14 +8,14 @@
              [alt]='publication?.title'
         >
       </div>
-      <dialog id="modal">
+      <dialog id="modal" class="modal">
         <form method="dialog" class="form">
-          <div class="imagen_card_publication_modal" *ngFor="let img of publication?.image">
+          <div class="img_modal_content" *ngFor="let img of publication?.image">
             <img [src]="img"
                  [alt]='publication?.title'
             >
           </div>
-            <button type="submit" id="Cerrar">Cerrar</button>
+            <button type="submit" id="Cerrar" class="modal-close">Cerrar</button>
         </form>
       </dialog>
 
@@ -51,7 +51,7 @@
       <div class="icon_contract">
         <mat-icon >insert_drive_file</mat-icon>
         <div class="content-button">
-          <button class="buttons">make contract</button>
+          <button class="buttons" (click)="routerAppointment()">make contract</button>
         </div>
       </div>
       <div class="icon_delete">

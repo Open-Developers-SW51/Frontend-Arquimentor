@@ -13,6 +13,7 @@ import {MainComponent} from "./Arquimentor/pages/main/main.component";
 import {SubscriptionContentComponent} from "./Arquimentor/components/subscription-content/subscription-content.component";
 
 import {SubscriptionComponent} from "./Arquimentor/components/subscription/subscription.component";
+import {AppointmentComponent} from "./Arquimentor/components/appointment/appointment.component";
 
 
 
@@ -26,7 +27,7 @@ const routes: Routes = [
   { path: 'home', component: MainComponent },
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
-
+  { path: 'appointment', component: AppointmentComponent},
   { path: 'subscription', component: SubscriptionContentComponent},
   { path: 'create-post', component: CreatePostComponent},
 

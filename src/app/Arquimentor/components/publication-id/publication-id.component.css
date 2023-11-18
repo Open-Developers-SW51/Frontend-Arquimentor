@@ -3,13 +3,6 @@
   justify-content: center;
 }
 
-.imagen_card_publication_modal{
-  margin: 18px auto;
-  width: 90%;
-  height: 170px;
-  object-fit: cover;
-  display: flex;
-}
 
 .card-publication {
   display: flex;
@@ -33,7 +26,84 @@
   object-fit: cover;
   display: flex;
 }
+
 .imagen_card_publication img{
+  width: 0;
+  flex-grow: 1;
+  object-fit: cover;
+  border-radius: 30px;
+}
+.modal{
+  margin-top: 30px;
+  position: fixed;
+  width: 60%;
+  background-color: #E3BD86;
+  border-radius: 15px;
+  border-color: #e0b781;
+  box-shadow: 0 4px 8px 0 rgb(173, 144, 99);
+}
+dialog.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.form button{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  background-color: #E3BD86;
+  border-radius: 5px;
+  border-color: #e0b781;
+  box-shadow: 0 4px 8px 0 rgb(173, 144, 99);
+}
+form{
+  background-color: #9197cb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  flex-wrap: wrap;
+}
+.img_modal_content{
+  margin: 20px ;
+
+  width: 40%;
+  min-width: 300px;
+  height: auto;
+}
+.img_modal_content img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 30px;
+}
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.modal.show {
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+/* Aplicar la animación a la capa de fondo */
+.modal-overlay.show {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.imagen_card_publication_modal{
+  margin: 18px auto;
+  width: 90%;
+  height: 170px;
+  object-fit: cover;
+  display: flex;
+}
+.imagen_card_publication_modal img{
   width: 0;
   flex-grow: 1;
   object-fit: cover;
