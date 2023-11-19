@@ -1,25 +1,46 @@
 
-<div class="content-add-post">
-  crear cuenta
-  <form (ngSubmit)="registerAccount()" class="form-add-post">
-    <div class="add-post-right">
-      <!-- Título del post (podrías agregar más campos si es necesario) -->
-      <div class="post-title">
-        <mat-form-field class="full-width">
-          <input matInput placeholder="Title" [(ngModel)]="singUpM.username" name="postTitle" required>
-        </mat-form-field>
-      </div>
-      <div class="post-description">
-        <!-- Descripción del post -->
-        <mat-form-field class="full-width">
-          <textarea matInput placeholder="Description" [(ngModel)]="singUpM.password" name="postDescription" required rows="8" ></textarea>
+<div class="container">
+  <section>
+    <h3>CREATE ACCOUNT</h3>
+    <p>Already have an account? <span><a routerLink="/login">Log in</a></span></p>
+    <form class="card" (ngSubmit)="registerAccount()">
+      <div class="input-box">
+        <mat-label>Name</mat-label>
+        <mat-form-field>
+          <input  id="name" placeholder="Name" formControlName="name"  required >
         </mat-form-field>
       </div>
 
-      <!-- Botón para enviar el post -->
-      <div class="content-button">
-        <button type="submit" mat-raised-button color="primary">Create Publication</button>
+        <div class="input-box">
+          <mat-label>Username</mat-label>
+          <mat-form-field >
+            <input matInput type="username" placeholder="Username" [(ngModel)]="singUpM.username" name="postTitle" required>
+          </mat-form-field>
+        </div>
+
+      <div class="input-box">
+        <mat-label>Email address</mat-label>
+        <mat-form-field>
+          <input  type="email" placeholder="Email" formControlName="email"  required  >
+        </mat-form-field>
       </div>
-    </div>
-  </form>
+
+        <div class="input-box">
+          <mat-label>Password</mat-label>
+          <mat-form-field >
+            <input matInput type="password" placeholder="Password" [(ngModel)]="singUpM.password" name="postDescription" required>
+          </mat-form-field>
+        </div>
+
+      <div class="column">
+        <!-- cambiar direccion -->
+        <p>By registering you are accepting our <span><a routerLink="/login" >Terms of Use</a> </span> and <span> <a routerLink="/login">Privacy Policy</a></span> </p>
+      </div>
+
+        <div class="content-button">
+          <button type="submit" mat-button>Create Account</button>
+        </div>
+
+    </form>
+  </section>
 </div>
