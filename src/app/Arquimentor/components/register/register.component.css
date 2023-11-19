@@ -22,14 +22,7 @@ span a{
 span a:hover{
   color: #0E3026;
 }
-u{
-  color:#E3BD86;
-  text-decoration: underline;
-  cursor: pointer;
-}
-u:hover{
-  color: #0E3026;
-}
+
 form{
   margin: auto;
 }
@@ -38,7 +31,7 @@ form{
   width: 400px;
 }
 
-.userName{
+mat-label{
   color: #0E3026;
   height: 70px;
   font-size: 20px;
@@ -47,7 +40,9 @@ form{
   width: 40px;
   margin-right: 40px;
   font-family: 'Overpass', sans-serif;
+
 }
+
 .input-box{
   margin:0.5rem 0;
   display: flex;
@@ -85,10 +80,6 @@ button:hover{
   background: #d3912f;
   color: #000000;
   transform: scale(1.2);
-}
-
-.imgForm{
-  display: none;
 }
 
 @media (max-width: 800px){
