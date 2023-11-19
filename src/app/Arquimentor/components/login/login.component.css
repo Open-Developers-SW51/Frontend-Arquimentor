@@ -1,52 +1,47 @@
 
-.container{
+.container {
   background-color: #6e988c;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: Roboto, sans-serif;
 }
-h3{
+
+.section h3 {
   font-size: 25px;
+  font-weight: 600;
   text-align: center;
   margin: 2rem 0 0  0;
 }
-p{
+
+.column p {
   font-weight: 500;
   text-align: center;
-  margin: .5rem 0 .5rem 0;
-}
-span{
-  color:#E3BD86;
-  text-decoration: underline;
-  cursor: pointer;
-}
-span:hover{
-  color: #0E3026;
-}
-u{
-  color:#E3BD86;
-  text-decoration: underline;
-  cursor: pointer;
-}
-u:hover{
-  color: #091f19;
+  margin: 0.5rem 0 0.5rem 0;
 }
 
-form{
-  background-color: #6e988c;
-  margin: auto;
+.column span a {
+  color:#E3BD86;
+  text-decoration: underline;
+  cursor: pointer;
 }
-form{
+
+.column span a:hover {
+  color: #0E3026;
+}
+
+form.card {
+  background-color: #6e988c;
   margin-top: 1rem;
   width: 400px;
   padding: 20px;
 }
 
 mat-form-field {
-
   height: 6rem;
+  width: 600px;
   padding: 0.5rem 1rem;
+
 }
 
 .input-box{/*caja label text ye imput */
@@ -64,11 +59,8 @@ mat-label{  /*texto label*/
   font-weight: bold;
   width: 40px;
   margin-right: 40px;
-
   font-family: 'Overpass', sans-serif;
 }
-
-
 
 .input-box input{
   background: #fbe3c0;
@@ -77,10 +69,14 @@ mat-label{  /*texto label*/
   padding: 0.5rem 1rem;
   width: 90%;
   margin-bottom: 1rem;
-  border: none;
+  border: none; /* Eliminar el borde predeterminado */
+  outline: none; /* Eliminar el contorno al hacer clic */
+}
+.input-box input:focus {
+  outline: none;
 }
 
-button{
+button {
   background: #d3912f;
   color: #000000;
   font-weight: bold;
@@ -92,14 +88,13 @@ button{
   cursor: pointer;
   transition: 0.3s;
 }
-button:hover{
+
+button:hover {
   background: #d3912f;
   color: #000000;
   transform: scale(1.2);
 }
-.imgForm{
-  display: none;
-}
+
 @media (max-width: 900px){
   .container{
     display: flex;
@@ -111,26 +106,8 @@ button:hover{
     color: #0E3026;
     height: 120px;
   }
-  mat-form-field{
-    display: inline-flex;
-    flex: 1 0 auto;
-  }
 
-  .imgForm {
-    transform: translateX(-300px);
-    display: flex;
-    width: 20%;
-    animation: moveUpDown 2s infinite alternate ease;
-  }
 
-  @keyframes moveUpDown {
-    0% {
-      transform: translateX(-200px) translateY(50px);
-    }
-    100% {
-      transform: translateX(-200px) translateY(-50px);
-    }
-  }
   mat-label{
     color: #0E3026;
     font-size: 20px;
