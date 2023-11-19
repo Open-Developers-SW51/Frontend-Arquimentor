@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Publication} from "../../model/publication";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 
 @Component({
@@ -10,8 +10,12 @@ import {Router} from "@angular/router";
 })
 export class CardPublicationContentComponent implements OnInit{
   @Input() publications: Array<Publication>=[];
-
-  constructor(private router:Router) {
+  id: number=0;
+  constructor(private router:Router,
+              private route: ActivatedRoute) {
+    this.route.queryParams.subscribe(params => {
+      this.id = params['id'];
+    });
   }
 
   ngOnInit(): void {
@@ -20,10 +24,6 @@ export class CardPublicationContentComponent implements OnInit{
 
   SeeIdPublication(id:number) {
     console.log(id)
-    this.router.navigate([`/publication/`+id]);
+    this.router.navigate([`/publication/`+id],{ queryParams: { id: this.id }});
   }
-
-
-
-
 }

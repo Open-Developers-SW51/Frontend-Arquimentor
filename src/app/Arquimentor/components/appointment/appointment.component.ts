@@ -8,12 +8,16 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class AppointmentComponent {
   showOverlay = false;
-  currentUrl: string | undefined;
+  id: number=0;
+  idPublication: string="degg";
 
-  constructor(private route: ActivatedRoute,private router2: Router) {
+  constructor(private route: ActivatedRoute,private router: Router) {
     // Obtén el parámetro de consulta 'currentUrl'
     this.route.queryParams.subscribe(params => {
-      this.currentUrl = params['currentUrl'];
+      this.id = params['id'];
+    });
+    this.route.queryParams.subscribe(params => {
+      this.idPublication = params['idPublication'];
     });
   }
   openOverlay() {
@@ -25,6 +29,7 @@ export class AppointmentComponent {
   }
 
   back() {
-    this.router2.navigate([this.currentUrl]);
+    console.log(this.idPublication);
+    this.router.navigate(["publication/"+this.idPublication],{ queryParams: { id: this.id } });
   }
 }

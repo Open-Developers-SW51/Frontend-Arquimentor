@@ -27,6 +27,11 @@ export class StudentProfileComponent implements OnInit {
     this.dataSource = new MatTableDataSource<any>();
   }
   toggleEdit(): void {
+    // @ts-ignore
+    if (this.userProfile.userProfilePhoto==""){
+      // @ts-ignore
+      this.userProfile.userProfilePhoto="https://cdn.discordapp.com/attachments/1149549726748921939/1175717928063225928/images.png?ex=656c3fa5&is=6559caa5&hm=d6a6935bf1b8eeff5f2ee6b0ad85786c82ac00b04cd78163e624fd62c17a01e1&"
+    }
     this.isEditing = true;
   }
   ngOnInit(): void {
