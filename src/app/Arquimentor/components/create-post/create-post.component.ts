@@ -3,7 +3,7 @@ import {ThemePalette} from "@angular/material/core";
 import {ArquimentorService} from "../../services/arquimentor.service";
 import {Publication} from "../../model/publication";
 import {MatTableDataSource} from "@angular/material/table";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {FileUploadService} from "../../services/file-upload.service";
 
 @Component({
@@ -12,6 +12,7 @@ import {FileUploadService} from "../../services/file-upload.service";
   styleUrls: ['./create-post.component.css']
 })
 export class CreatePostComponent {
+  idUrl: string | undefined;
   isVisibilityOn: any;
   color: ThemePalette = "warn";
   checked = true;
@@ -21,11 +22,14 @@ export class CreatePostComponent {
   //imagen
   images: any = [];
 
-  constructor(private arquimentorService: ArquimentorService, private router: Router, private fileUploadService: FileUploadService) {
+  constructor(private route: ActivatedRoute,private arquimentorService: ArquimentorService, private router: Router, private fileUploadService: FileUploadService) {
     this.publication = {} as Publication;
     this.dataSource = new MatTableDataSource<any>();
     this.publication.mentorProfileId = 1;
     this.publication.image = [];
+    this.route.queryParams.subscribe(params => {
+      this.idUrl = params['id'];
+    });
   }
 
   createPublication(): void {
@@ -37,7 +41,7 @@ export class CreatePostComponent {
         this.dataSource.data = this.dataSource.data.map((p: Publication) => {
           console.log(p);
           alert("post created")
-          this.router.navigate(['/']);
+          this.router.navigate(["/home"],{ queryParams: { id: this.idUrl }});
           return p;
 
         });
@@ -69,6 +73,6 @@ export class CreatePostComponent {
   }
 
   cancelEdit() {
-    this.router.navigate(['/']);
+    this.router.navigate(["/home"],{ queryParams: { id: this.idUrl } });
   }
 }

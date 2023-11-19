@@ -69,6 +69,7 @@ export class StudentProfileComponent implements OnInit {
 
   private getStudentProfileId(studentProfileId: number) {
     this.studentProfileService.getStudentProfileId(studentProfileId).subscribe((response: any) => {
+      console.log(studentProfileId);
       this.userProfile = response;
       console.log(this.userProfile);
     });

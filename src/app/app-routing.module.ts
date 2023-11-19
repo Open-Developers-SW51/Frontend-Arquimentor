@@ -20,8 +20,8 @@ import {AuthGuard} from "./Arquimentor/helpers/auth.guard.ts";
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'student-profile/:studentProfileId', component: StudentProfileComponent },
-  { path: 'mentor-profile/:mentorProfileId', component: MentorProfileComponent },
+  { path: 'student-profile/:studentProfileId', component: StudentProfileComponent,canActivate: [AuthGuard] },
+  { path: 'mentor-profile/:mentorProfileId', component: MentorProfileComponent,canActivate: [AuthGuard] },
   { path: 'publication/:publicationId', component: PublicationIdComponent,canActivate: [AuthGuard] },
   { path: 'chat', component: ChatComponent,canActivate: [AuthGuard]},
   { path: 'home', component: MainComponent,canActivate: [AuthGuard]},

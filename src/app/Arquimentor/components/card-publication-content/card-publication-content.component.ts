@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Publication} from "../../model/publication";
 import {Router} from "@angular/router";
-import {ArquimentorService} from "../../services/arquimentor.service";
 
 
 @Component({
