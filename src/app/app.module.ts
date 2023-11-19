@@ -38,6 +38,12 @@ import { SubscriptionComponent } from './Arquimentor/components/subscription/sub
 import { AppointmentComponent } from './Arquimentor/components/appointment/appointment.component';
 import { InformationWindowComponent } from './Arquimentor/components/information-window/information-window.component';
 import {AuthInterceptor} from "./Arquimentor/helpers/auth.interceptor";
+import { SettingsComponent } from './Arquimentor/components/settings/settings.component';
+import {MatCheckboxModule} from "@angular/material/checkbox";
+import {MatRadioModule} from "@angular/material/radio";
+import {MatSliderModule} from "@angular/material/slider";
+import {MatOptionModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
 
 
 @NgModule({
@@ -58,7 +64,8 @@ import {AuthInterceptor} from "./Arquimentor/helpers/auth.interceptor";
     CreatePostComponent,
     SubscriptionComponent,
     AppointmentComponent,
-    InformationWindowComponent
+    InformationWindowComponent,
+    SettingsComponent
 
   ],
   imports: [
@@ -80,7 +87,12 @@ import {AuthInterceptor} from "./Arquimentor/helpers/auth.interceptor";
     FormsModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatSliderModule,
+    MatOptionModule,
+    MatSelectModule
 
   ],
   providers: [ArquimentorService, {

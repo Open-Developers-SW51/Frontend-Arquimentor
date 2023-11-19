@@ -8,6 +8,7 @@ import { CreatePostComponent } from './Arquimentor/components/create-post/create
 import {LoginComponent} from "./Arquimentor/components/login/login.component";
 import {RegisterComponent} from "./Arquimentor/components/register/register.component";
 import {MainComponent} from "./Arquimentor/pages/main/main.component";
+import {SettingsComponent} from "./Arquimentor/components/settings/settings.component";
 
 import {SubscriptionContentComponent} from "./Arquimentor/components/subscription-content/subscription-content.component";
 
@@ -31,7 +32,9 @@ const routes: Routes = [
   { path: 'subscription', component: SubscriptionContentComponent,canActivate: [AuthGuard]},
   { path: 'create-post', component: CreatePostComponent,canActivate: [AuthGuard]},
 
-  { path: 'subscription', component: SubscriptionComponent,canActivate: [AuthGuard]}
+  { path: 'subscription', component: SubscriptionComponent,canActivate: [AuthGuard]},
+  {path:'settings',component:SettingsComponent}
+
 
 ];
 
