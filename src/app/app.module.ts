@@ -27,7 +27,6 @@ import {ChatComponent} from "./Arquimentor/components/chat/chat.component";
 import {ReviewsComponent} from "./Arquimentor/components/reviews/reviews.component";
 
 import { CardPublicationContentComponent } from './Arquimentor/components/card-publication-content/card-publication-content.component';
-import { LandigPageComponent } from './Arquimentor/components/landig-page/landig-page.component';
 import {HeaderComponent} from "./Arquimentor/components/header/header.component";
 import{LoginComponent} from "./Arquimentor/components/login/login.component";
 import {RegisterComponent} from "./Arquimentor/components/register/register.component";
@@ -50,8 +49,6 @@ import {AuthInterceptor} from "./Arquimentor/helpers/auth.interceptor";
     PublicationIdComponent,
     ChatComponent,
     ReviewsComponent,
-
-    LandigPageComponent,
     HeaderComponent,
     LoginComponent,
     RegisterComponent,
@@ -59,11 +56,9 @@ import {AuthInterceptor} from "./Arquimentor/helpers/auth.interceptor";
     CardPublicationContentComponent,
     SubscriptionContentComponent,
     CreatePostComponent,
-
     SubscriptionComponent,
-      AppointmentComponent,
-      InformationWindowComponent
-
+    AppointmentComponent,
+    InformationWindowComponent
 
   ],
   imports: [

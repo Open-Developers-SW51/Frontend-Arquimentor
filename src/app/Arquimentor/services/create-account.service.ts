@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {BaseService} from "../../shared/services/base.service";
 import {SingUp} from "../model/sing-up";
-import {HttpClient, HttpResponse} from "@angular/common/http";
-import {catchError, map, retry} from "rxjs";
+import {HttpClient} from "@angular/common/http";
+import {catchError, retry} from "rxjs";
 import {SingIn} from "../model/sing-in";
 
 @Injectable({

@@ -1,10 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {SingIn} from "../../model/sing-in";
-import {FormBuilder} from "@angular/forms";
-import {HttpClient} from "@angular/common/http";
 import {CreateAccountService} from "../../services/create-account.service";
 import {MatTableDataSource} from "@angular/material/table";
-import {SingUp} from "../../model/sing-up";
 import {Router} from "@angular/router";
 
 @Component({

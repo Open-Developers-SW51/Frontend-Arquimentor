@@ -25,7 +25,6 @@ export class PublicationIdComponent implements OnInit{
     this.getIdPublication(publicationId);
     const userLiked = localStorage.getItem('userLiked'+publicationId);
     this.liked = userLiked === 'true';
-
   }
 
   private getIdPublication(publicationId: number) {
@@ -42,7 +41,7 @@ export class PublicationIdComponent implements OnInit{
   back() {
     const rutaAnterior = this.location.path();
     console.log('Ruta anterior:', rutaAnterior);
-    this.router.navigate(['/']);
+    this.router.navigate(['home']);
   }
 
   deletePublication() {
@@ -99,7 +98,7 @@ export class PublicationIdComponent implements OnInit{
   }
 
   routerAppointment() {
-    this.router.navigate(['/appointment']);
-
+    const url = this.router.url;
+    this.router.navigate(['/appointment'],{ queryParams: { currentUrl: url } });
   }
 }

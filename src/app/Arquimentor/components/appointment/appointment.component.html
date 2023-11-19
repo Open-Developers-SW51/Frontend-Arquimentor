@@ -16,7 +16,7 @@
   </div>
   <div class="appointment_button">
     <button class="hireB" (click)="openOverlay()" >hire</button>
-    <button class="cancelB">cancel</button>
+    <button class="cancelB" (click)="back()">cancel</button>
   </div>
   <div *ngIf="showOverlay">
     <app-information-window [message]="'The request has been sent to the advisor, you will receive a notification very soon'" (close)="closeOverlay()"></app-information-window>
