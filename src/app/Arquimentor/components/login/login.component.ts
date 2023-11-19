@@ -3,6 +3,8 @@ import {SingIn} from "../../model/sing-in";
 import {CreateAccountService} from "../../services/create-account.service";
 import {MatTableDataSource} from "@angular/material/table";
 import {Router} from "@angular/router";
+import {StudentService} from "../../services/student.service";
+import {Student} from "../../model/student";
 
 @Component({
   selector: 'app-login',
@@ -10,6 +12,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
+  student: Student | undefined;
   singIn: SingIn;
   dataSource: MatTableDataSource<any>;
   constructor(
@@ -29,11 +32,10 @@ export class LoginComponent implements OnInit{
         this.dataSource.data.push({...response});
         console.log(this.dataSource)
         this.dataSource.data = this.dataSource.data.map((p: SingIn) => {
-          console.log(p);
-          console.log("token: "+p.token);
           localStorage.setItem('token', p.token);
           alert("login iniciado")
-          this.router.navigate(['home']);
+
+          this.router.navigate(['home'],{ queryParams: { id: p.id } });
           return p;
         });
       },

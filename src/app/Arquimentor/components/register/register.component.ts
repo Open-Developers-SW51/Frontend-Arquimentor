@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit{
     this.student.firstName=this.singUpM.username;
     this.student.password=this.singUpM.password;
     this.student.email="..@gmail.com";
-    this.student.lastname="jose";
+    this.student.lastname="~";
     this.createAccountService.singUp(this.singUpM).subscribe(
       (response: any) => {
         this.dataSource.data.push({...response});
