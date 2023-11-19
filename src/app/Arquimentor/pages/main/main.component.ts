@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {ArquimentorService} from "../../services/arquimentor.service";
 import {Publication} from "../../model/publication";
-import {MatTableDataSource} from "@angular/material/table";
 import {StudentService} from "../../services/student.service";
 import {Student} from "../../model/student";
 
@@ -24,7 +23,7 @@ export class MainComponent implements OnInit{
     });
   }
   addPost(): void {
-    this.router.navigate(['/create-post']);
+    this.router.navigate(['create-post'],{ queryParams: { id: this.id } });
   }
 
   ngOnInit(): void {

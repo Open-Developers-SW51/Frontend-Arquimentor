@@ -10,17 +10,23 @@ import {Publication} from "../../model/publication";
 })
 
 export class PublicationIdComponent implements OnInit{
+  idPublication: string|undefined;
   publication: Publication | undefined;
   liked: boolean = false;
   linkCount:number | undefined=0;
   viewCount:number | undefined=0;
-
+  id: number=0;
   constructor(    private arquimentorService: ArquimentorService,
-                  private route: ActivatedRoute,private router: Router,private location: Location) {
+                  private route: ActivatedRoute,private router: Router,private location: Location
+  ) {
+    this.route.queryParams.subscribe(params => {
+      this.id = params['id'];
+    });
   }
 
   ngOnInit(): void {
     const publicationId = this.route.snapshot.params['publicationId'];
+    this.idPublication = publicationId;
     this.arquimentorService.incrementView(publicationId).subscribe();
     this.getIdPublication(publicationId);
     const userLiked = localStorage.getItem('userLiked'+publicationId);
@@ -41,7 +47,7 @@ export class PublicationIdComponent implements OnInit{
   back() {
     const rutaAnterior = this.location.path();
     console.log('Ruta anterior:', rutaAnterior);
-    this.router.navigate(['home']);
+    this.router.navigate(['home'],{ queryParams: { id: this.id }});
   }
 
   deletePublication() {
@@ -53,7 +59,7 @@ export class PublicationIdComponent implements OnInit{
       error => {
         console.error('Error al eliminar el recurso', error);
       });
-    this.router.navigate(['/']);
+    this.router.navigate(['home'],{ queryParams: { id: this.id }});
     alert("post with id "+id+" deleted")
   }
 
@@ -99,6 +105,6 @@ export class PublicationIdComponent implements OnInit{
 
   routerAppointment() {
     const url = this.router.url;
-    this.router.navigate(['/appointment'],{ queryParams: { currentUrl: url } });
+    this.router.navigate(['/appointment'],{ queryParams: { id: this.id, idPublication: this.idPublication }});
   }
 }
