@@ -1,46 +1,25 @@
-<app-header></app-header>
 
-<div class="container">
-  <section>
-    <h3>CREATE ACCOUNT</h3>
-    <p>Already have an account? <span><a href="login">Log in</a></span></p>
-    <form class="card" >
-      <div class="input-box">
-        <mat-label>Name</mat-label>
-        <mat-form-field>
-          <input  type="name" placeholder="Name" >
+<div class="content-add-post">
+  crear cuenta
+  <form (ngSubmit)="registerAccount()" class="form-add-post">
+    <div class="add-post-right">
+      <!-- Título del post (podrías agregar más campos si es necesario) -->
+      <div class="post-title">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Title" [(ngModel)]="singUpM.username" name="postTitle" required>
+        </mat-form-field>
+      </div>
+      <div class="post-description">
+        <!-- Descripción del post -->
+        <mat-form-field class="full-width">
+          <textarea matInput placeholder="Description" [(ngModel)]="singUpM.password" name="postDescription" required rows="8" ></textarea>
         </mat-form-field>
       </div>
 
-      <div class="input-box">
-        <mat-label>Username</mat-label>
-        <mat-form-field>
-          <input  type="username" placeholder="Username" >
-        </mat-form-field>
+      <!-- Botón para enviar el post -->
+      <div class="content-button">
+        <button type="submit" mat-raised-button color="primary">Create Publication</button>
       </div>
-
-      <div class="input-box">
-        <mat-label>Email address</mat-label>
-        <mat-form-field>
-          <input  type="email" placeholder="Email" >
-        </mat-form-field>
-      </div>
-
-      <div class="input-box">
-        <mat-label>Password</mat-label>
-        <mat-form-field>
-          <input matInput type="password" placeholder="Password" >
-        </mat-form-field>
-      </div>
-
-      <div class="column">
-        <p>By registering you are accepting our <u>Terms of Use</u> and <u>Privacy Policy</u></p>
-      </div>
-
-    </form>
-
-
-    <a href="home"><button mat-button  type="submit">Create</button></a>
-  </section>
-
+    </div>
+  </form>
 </div>

@@ -37,14 +37,8 @@ form{
   margin-top: 1rem;
   width: 400px;
 }
-mat-form-field {
 
-  border-radius: 62px;
-  height: 5rem;
-  padding: 0.5rem 1rem;
-}
-
-mat-label{
+.userName{
   color: #0E3026;
   height: 70px;
   font-size: 20px;
@@ -53,7 +47,6 @@ mat-label{
   width: 40px;
   margin-right: 40px;
   font-family: 'Overpass', sans-serif;
-
 }
 .input-box{
   margin:0.5rem 0;

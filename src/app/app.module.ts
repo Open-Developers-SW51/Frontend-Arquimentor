@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {LayoutModule} from "@angular/cdk/layout";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
@@ -27,7 +27,6 @@ import {ChatComponent} from "./Arquimentor/components/chat/chat.component";
 import {ReviewsComponent} from "./Arquimentor/components/reviews/reviews.component";
 
 import { CardPublicationContentComponent } from './Arquimentor/components/card-publication-content/card-publication-content.component';
-import { LandigPageComponent } from './Arquimentor/components/landig-page/landig-page.component';
 import {HeaderComponent} from "./Arquimentor/components/header/header.component";
 import{LoginComponent} from "./Arquimentor/components/login/login.component";
 import {RegisterComponent} from "./Arquimentor/components/register/register.component";
@@ -38,6 +37,7 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import { SubscriptionComponent } from './Arquimentor/components/subscription/subscription.component';
 import { AppointmentComponent } from './Arquimentor/components/appointment/appointment.component';
 import { InformationWindowComponent } from './Arquimentor/components/information-window/information-window.component';
+import {AuthInterceptor} from "./Arquimentor/helpers/auth.interceptor";
 
 
 @NgModule({
@@ -49,8 +49,6 @@ import { InformationWindowComponent } from './Arquimentor/components/information
     PublicationIdComponent,
     ChatComponent,
     ReviewsComponent,
-
-    LandigPageComponent,
     HeaderComponent,
     LoginComponent,
     RegisterComponent,
@@ -58,11 +56,9 @@ import { InformationWindowComponent } from './Arquimentor/components/information
     CardPublicationContentComponent,
     SubscriptionContentComponent,
     CreatePostComponent,
-
     SubscriptionComponent,
-      AppointmentComponent,
-      InformationWindowComponent
-
+    AppointmentComponent,
+    InformationWindowComponent
 
   ],
   imports: [
@@ -87,7 +83,9 @@ import { InformationWindowComponent } from './Arquimentor/components/information
     MatSlideToggleModule
 
   ],
-  providers: [ArquimentorService],
+  providers: [ArquimentorService, {
+  provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
