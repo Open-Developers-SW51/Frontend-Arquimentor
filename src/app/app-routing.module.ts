@@ -36,7 +36,7 @@ const routes: Routes = [
   { path: 'subscription', component: SubscriptionComponent,canActivate: [AuthGuard]},
   {path:'settings',component:SettingsComponent,canActivate: [AuthGuard]},
   {path: 'detail/:id', component: DetailArticleComponent,canActivate: [AuthGuard]},
-  {path: '**', redirectTo: 'subscription', pathMatch: 'full',canActivate: [AuthGuard]}
+  {path: '**', redirectTo: 'subscription', pathMatch: 'full'}
 
 ];
 

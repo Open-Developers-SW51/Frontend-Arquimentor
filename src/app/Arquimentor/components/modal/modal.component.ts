@@ -44,7 +44,7 @@ export class ModalComponent implements OnInit {
             data => {
 
                 this.dialogRef.close();
-                Swal.fire('¡Success!', 'Payment successfully canceled', 'success');
+                Swal.fire('Error', 'Payment canceled', 'error');
             },
             err => {
 
