@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
+
 import { PaymentService } from '../../services/payment.service';
 import { MatDialogRef } from '@angular/material/dialog';
 import Swal from 'sweetalert2';
@@ -17,7 +17,7 @@ export class ModalComponent implements OnInit {
     constructor(
         public dialogRef: MatDialogRef<ModalComponent>,
         private paymentService: PaymentService,
-        private toastrService: ToastrService
+
     ) {}
 
     ngOnInit() {}

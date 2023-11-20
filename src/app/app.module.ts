@@ -47,6 +47,11 @@ import {MatSelectModule} from "@angular/material/select";
 
 import { NgxStripeModule } from 'ngx-stripe';
 import { MatDialogModule } from '@angular/material/dialog';
+
+import {ModalComponent} from "./Arquimentor/components/modal/modal.component";
+import {DetailArticleComponent} from "./Arquimentor/components/detail-article/detail-article.component";
+import {PaymentComponent} from "./Arquimentor/components/payment/payment.component";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,8 +71,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     SubscriptionComponent,
     AppointmentComponent,
     InformationWindowComponent,
-    SettingsComponent
-
+    SettingsComponent,
+    ModalComponent,
+    DetailArticleComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

@@ -7,7 +7,7 @@ import { ModalComponent } from '../modal/modal.component';
 import { PaymentService } from '../../services/payment.service';
 import { Router } from '@angular/router';
 import { PaymentIntentDto } from '../../model/payment-intent-dto';
-import {idTokenResult} from "@angular/fire/auth-guard";
+
 
 @Component({
   selector: 'app-payment',
