@@ -1,5 +1,5 @@
 <form novalidate (ngSubmit)="buy()" [formGroup]="stripeForm" #f="ngForm">
-    <input type="text" formControlName="name" placeholder="tu nombre">
+    <input type="text" formControlName="name" placeholder="Nombre Completo">
     <ngx-stripe-card
             [options]="cardOptions"
             [elementsOptions]="elementsOptions"
