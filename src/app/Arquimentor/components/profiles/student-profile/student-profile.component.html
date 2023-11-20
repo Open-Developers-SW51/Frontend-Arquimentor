@@ -6,7 +6,7 @@
         <img [src]="userProfile.userProfilePhoto|| 'https://cdn.discordapp.com/attachments/1149549726748921939/1175717928063225928/images.png?ex=656c3fa5&is=6559caa5&hm=d6a6935bf1b8eeff5f2ee6b0ad85786c82ac00b04cd78163e624fd62c17a01e1&'" alt="Profile Image">
       </div>
       <div class="profile-avatar" *ngIf="isEditing">
-        <img [src]="images[0]? images[0]:userProfile?.userProfilePhoto" alt="Profile Image">
+        <img [src]="images[0] || userProfile.userProfilePhoto" alt="Profile Image">
         <div class="pie">
           <input type="file" name="foto" id="foto" (change)="onFileSelected($event)" accept=".png, .jpeg, .jpg" multiple>
           <label for="foto" id="agregar">Edit photo profile</label>

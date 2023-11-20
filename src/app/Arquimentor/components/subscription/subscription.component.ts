@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {ArticleService} from "../../services/article.service";
+import {Article} from "../../model/article";
 
 @Component({
   selector: 'app-subscription',
@@ -6,6 +8,7 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./subscription.component.css']
 })
 export class SubscriptionComponent implements OnInit{
+  articles: Article[] = [];
   subscriptions = [
     {
       image: 'https://media.discordapp.net/attachments/1014323196859781182/1169158205033685052/free.png?ex=6554626d&is=6541ed6d&hm=a5d8de822931ba4152c1ce129c7e58280c68aef32cccb35bba6b8bcce726def0&=&width=1118&height=671',
@@ -29,9 +32,18 @@ export class SubscriptionComponent implements OnInit{
       hasButtons: true
     }
   ];
-  constructor() { }
+  constructor(private articleService: ArticleService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {this.cargarLista();
   }
-
+  cargarLista(): void {
+    this.articleService.list().subscribe(
+      data => {
+        this.articles = data;
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
 }

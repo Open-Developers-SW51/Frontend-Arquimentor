@@ -45,6 +45,12 @@ import {MatSliderModule} from "@angular/material/slider";
 import {MatOptionModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
 
+import { NgxStripeModule } from 'ngx-stripe';
+import { MatDialogModule } from '@angular/material/dialog';
+
+import {ModalComponent} from "./Arquimentor/components/modal/modal.component";
+import {DetailArticleComponent} from "./Arquimentor/components/detail-article/detail-article.component";
+import {PaymentComponent} from "./Arquimentor/components/payment/payment.component";
 
 @NgModule({
   declarations: [
@@ -65,8 +71,10 @@ import {MatSelectModule} from "@angular/material/select";
     SubscriptionComponent,
     AppointmentComponent,
     InformationWindowComponent,
-    SettingsComponent
-
+    SettingsComponent,
+    ModalComponent,
+    DetailArticleComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
@@ -92,8 +100,9 @@ import {MatSelectModule} from "@angular/material/select";
     MatRadioModule,
     MatSliderModule,
     MatOptionModule,
-    MatSelectModule
-
+    MatSelectModule,
+    MatDialogModule,
+    NgxStripeModule.forRoot('pk_test_51ODdN2DfqBM3nCd5wl2V5i8IhWVgxLG25CI7xvg7fvJ5fquCOvFj9qYLLZdrSbeamcg2LP8Nf8x3a7zxqXGylh1R00rXbH0SgY'),
   ],
   providers: [ArquimentorService, {
   provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
