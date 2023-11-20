@@ -3,15 +3,18 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-
 }
 
 .card {
 
-  width: 28rem;
+  width: 36rem;
   border: none;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  opacity: 1;
+  padding: 20px;
+  text-align: center;
 }
 
 .card-img-top {
@@ -23,15 +26,17 @@
 }
 
 .card-title {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: #333;
+  text-align: center;
 }
 
 .card-text {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   color: #666;
+  text-align: center;
 }
 
 .b {
@@ -39,8 +44,10 @@
 }
 
 .precio {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #28a745;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .btn {
