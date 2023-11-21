@@ -32,9 +32,12 @@ export class HeaderContentComponent {
   navigateStudentProfile() {
     this.router.navigate(['student-profile/'+this.id],{ queryParams: { id: this.id } });
   }
+  navigateSetting() {
+    this.router.navigate(['settings'],{ queryParams: { id: this.id } });
+  }
 
   navigateLogin() {
     localStorage.removeItem('token');
-    this.router.navigate(['login'],{ queryParams: { id: this.id } });
+    this.router.navigate(['login']);
   }
 }

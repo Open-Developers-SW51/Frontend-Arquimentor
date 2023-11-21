@@ -7,6 +7,7 @@ import {StudentService} from "../../services/student.service";
 import {Student} from "../../model/student";
 import {StudentProfileService} from "../../services/student-profile.service";
 import {StudentProfile} from "../../model/student-profile";
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -15,7 +16,11 @@ import {StudentProfile} from "../../model/student-profile";
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit{
-  singUpM :SingUp ;
+  miFormulario: FormGroup = new FormGroup({
+    userName: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required)
+  });
+  singUp :SingUp ;
   student: Student;
   studentProfile: StudentProfile;
   dataSource: MatTableDataSource<any>;
@@ -26,23 +31,24 @@ export class RegisterComponent implements OnInit{
     private studentService: StudentService,
   ) {
     this.student = {} as Student;
-    this.singUpM = {} as SingUp;
+    this.singUp = {} as SingUp;
     this.studentProfile = {} as StudentProfile;
     this.dataSource = new MatTableDataSource<any>();
   }
+
   ngOnInit(): void {
-    this.singUpM.roles= ["ROLE_USER"];
+    this.singUp.roles= ["ROLE_USER"];
   }
 
   registerAccount(): void {
-    this.singUpM.id = 0;
-    this.student.firstName=this.singUpM.username;
-    this.student.password=this.singUpM.password;
+    this.singUp.id = 0;
+    this.student.firstName=this.singUp.username;
+    this.student.password=this.singUp.password;
     //translate data
     this.student.email="..@gmail.com";
     this.student.lastname="~";
 
-    this.createAccountService.singUp(this.singUpM).subscribe(
+    this.createAccountService.singUp(this.singUp).subscribe(
       (response: any) => {
         this.dataSource.data.push({...response});
         this.dataSource.data = this.dataSource.data.map((p: SingUp) => {
@@ -60,6 +66,8 @@ export class RegisterComponent implements OnInit{
 
                 return p;
               });
+
+              //translate data
               this.studentProfile.nick="";
               this.studentProfile.phoneNumber="999999999";
               this.studentProfile.slogan="";
@@ -73,7 +81,6 @@ export class RegisterComponent implements OnInit{
             }
           );
 
-          //translate data
 
           this.router.navigate(['/']);
           return p;

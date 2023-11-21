@@ -5,6 +5,7 @@ import {MatTableDataSource} from "@angular/material/table";
 import {Router} from "@angular/router";
 import {StudentService} from "../../services/student.service";
 import {Student} from "../../model/student";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,10 @@ import {Student} from "../../model/student";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
+  miFormulario: FormGroup = new FormGroup({
+    userName: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required)
+  });
   student: Student | undefined;
   singIn: SingIn;
   dataSource: MatTableDataSource<any>;

@@ -4,10 +4,11 @@
 
 mat-toolbar{
   color: #E7EFF6;
-  background-color: #6d978b;
+  background-color: transparent;
   height: 90px;
   display: flex;
   justify-content: space-between;
+  font-size: 50px;
 }
 
 mat-toolbar :hover{
@@ -22,4 +23,7 @@ mat-toolbar :hover{
   margin-right: 20px;
 }
 
+.labels{
+  font-size: 19px;
+}
 

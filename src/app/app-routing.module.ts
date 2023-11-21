@@ -9,10 +9,7 @@ import {LoginComponent} from "./Arquimentor/components/login/login.component";
 import {RegisterComponent} from "./Arquimentor/components/register/register.component";
 import {MainComponent} from "./Arquimentor/pages/main/main.component";
 import {SettingsComponent} from "./Arquimentor/components/settings/settings.component";
-
 import {SubscriptionContentComponent} from "./Arquimentor/components/subscription-content/subscription-content.component";
-
-import {SubscriptionComponent} from "./Arquimentor/components/subscription/subscription.component";
 import {AppointmentComponent} from "./Arquimentor/components/appointment/appointment.component";
 // @ts-ignore
 import {AuthGuard} from "./Arquimentor/helpers/auth.guard.ts";
@@ -32,12 +29,9 @@ const routes: Routes = [
   { path: 'appointment', component: AppointmentComponent,canActivate: [AuthGuard]},
   { path: 'subscription', component: SubscriptionContentComponent,canActivate: [AuthGuard]},
   { path: 'create-post', component: CreatePostComponent,canActivate: [AuthGuard]},
-
-  { path: 'subscription', component: SubscriptionComponent,canActivate: [AuthGuard]},
   {path:'settings',component:SettingsComponent,canActivate: [AuthGuard]},
   {path: 'detail/:id', component: DetailArticleComponent,canActivate: [AuthGuard]},
   {path: '**', redirectTo: 'subscription', pathMatch: 'full'}
-
 ];
 
 @NgModule({

@@ -21,15 +21,17 @@ export class CreatePostComponent {
   publication: Publication;
   //imagen
   images: any = [];
+  private Integer: any;
 
   constructor(private route: ActivatedRoute,private arquimentorService: ArquimentorService, private router: Router, private fileUploadService: FileUploadService) {
     this.publication = {} as Publication;
     this.dataSource = new MatTableDataSource<any>();
-    this.publication.mentorProfileId = 1;
+
     this.publication.image = [];
     this.route.queryParams.subscribe(params => {
       this.idUrl = params['id'];
     });
+    this.publication.mentorProfileId = Number(this.idUrl);
   }
 
   createPublication(): void {
