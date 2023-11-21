@@ -4,12 +4,12 @@ import { PaymentService } from '../../services/payment.service';
 import { MatDialogRef } from '@angular/material/dialog';
 import Swal from 'sweetalert2';
 import {Router} from "@angular/router";
-import {Mentor} from "../../model/mentor";
-import {MentorProfile} from "../../model/mentor-profile";
-import {MentorService} from "../../services/mentor.service";
-import {MentorProfileService} from "../../services/mentor-profile.service";
-import {StudentProfileService} from "../../services/student-profile.service";
-import {StudentProfile} from "../../model/student-profile";
+import {Mentor} from "../../../user/model/mentor";
+import {MentorProfile} from "../../../user/model/mentor-profile";
+import {MentorService} from "../../../user/services/mentor.service";
+import {MentorProfileService} from "../../../user/services/mentor-profile.service";
+import {StudentProfileService} from "../../../user/services/student-profile.service";
+import {StudentProfile} from "../../../user/model/student-profile";
 @Component({
     selector: 'app-modal',
     templateUrl: './modal.component.html',

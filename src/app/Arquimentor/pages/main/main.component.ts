@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {ArquimentorService} from "../../services/arquimentor.service";
+import {PublicationService} from "../../services/publication.service";
 import {Publication} from "../../model/publication";
-import {StudentService} from "../../services/student.service";
-import {Student} from "../../model/student";
+import {StudentService} from "../../../user/services/student.service";
+import {Student} from "../../../user/model/student";
 
 @Component({
   selector: 'app-main',
@@ -15,7 +15,7 @@ export class MainComponent implements OnInit{
   id: number=0;
   student: Student | undefined;
   constructor(private router:Router,
-              private arquimentorService: ArquimentorService,
+              private arquimentorService: PublicationService,
               private studentService: StudentService,
               private route: ActivatedRoute) {
     this.route.queryParams.subscribe(params => {

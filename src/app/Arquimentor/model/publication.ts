@@ -1,5 +1,5 @@
-import {Mentor} from "./mentor";
-import {MentorProfile} from "./mentor-profile";
+import {Mentor} from "../../user/model/mentor";
+import {MentorProfile} from "../../user/model/mentor-profile";
 
 export class Publication {
   id : number;

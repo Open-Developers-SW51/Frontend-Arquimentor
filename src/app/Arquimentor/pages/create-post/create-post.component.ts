@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {ThemePalette} from "@angular/material/core";
-import {ArquimentorService} from "../../services/arquimentor.service";
+import {PublicationService} from "../../services/publication.service";
 import {Publication} from "../../model/publication";
 import {MatTableDataSource} from "@angular/material/table";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -23,7 +23,7 @@ export class CreatePostComponent {
   images: any = [];
   private Integer: any;
 
-  constructor(private route: ActivatedRoute,private arquimentorService: ArquimentorService, private router: Router, private fileUploadService: FileUploadService) {
+  constructor(private route: ActivatedRoute, private arquimentorService: PublicationService, private router: Router, private fileUploadService: FileUploadService) {
     this.publication = {} as Publication;
     this.dataSource = new MatTableDataSource<any>();
 

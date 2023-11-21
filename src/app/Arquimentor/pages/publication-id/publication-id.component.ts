@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ArquimentorService} from "../../services/arquimentor.service";
+import {PublicationService} from "../../services/publication.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import { Location } from '@angular/common';
 import {Publication} from "../../model/publication";
@@ -16,7 +16,7 @@ export class PublicationIdComponent implements OnInit{
   linkCount:number | undefined=0;
   viewCount:number | undefined=0;
   id: number=0;
-  constructor(    private arquimentorService: ArquimentorService,
+  constructor(    private arquimentorService: PublicationService,
                   private route: ActivatedRoute,private router: Router,private location: Location
   ) {
     this.route.queryParams.subscribe(params => {

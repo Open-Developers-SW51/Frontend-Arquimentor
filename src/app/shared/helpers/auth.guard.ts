@@ -1,5 +1,5 @@
 import {CanActivateFn, Router} from '@angular/router';
-import {CreateAccountService} from "../services/create-account.service";
+import {CreateAccountService} from "../../user/services/create-account.service";
 
 export const AuthGuard: CanActivateFn = (route, state) => {
   // @ts-ignore
