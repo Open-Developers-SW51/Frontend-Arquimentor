@@ -23,18 +23,33 @@
 .logo{
   align-items: center;
   align-self: flex-start;
+  padding:0 10px;
+  display: flex;
+}
+.profile-avatar{
+  margin: 0 auto;
+  width: 50%;
+  height: 170px;
+  object-fit: cover;
+  display: flex;
+}
+.profile-avatar img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+
 }
 
-.menu{
+.logo button{
   margin: 25px;
-  position: absolute;
   background-color: transparent;
   border: none;
 }
 
 .header img{
-  padding-left: 100px;
   width: auto;
+  object-fit: cover;
   height: 80px;
   align-self: center;
 }

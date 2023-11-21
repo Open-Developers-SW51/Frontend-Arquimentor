@@ -34,7 +34,6 @@ import { MainComponent } from './Arquimentor/pages/main/main.component';
 import {SubscriptionContentComponent} from "./Arquimentor/components/subscription-content/subscription-content.component";
 import { CreatePostComponent } from './Arquimentor/components/create-post/create-post.component';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
-import { SubscriptionComponent } from './Arquimentor/components/subscription/subscription.component';
 import { AppointmentComponent } from './Arquimentor/components/appointment/appointment.component';
 import { InformationWindowComponent } from './Arquimentor/components/information-window/information-window.component';
 import {AuthInterceptor} from "./Arquimentor/helpers/auth.interceptor";
@@ -70,7 +69,6 @@ import { NotificationListComponent } from './Arquimentor/components/notification
     CardPublicationContentComponent,
     SubscriptionContentComponent,
     CreatePostComponent,
-    SubscriptionComponent,
     AppointmentComponent,
     InformationWindowComponent,
     SettingsComponent,

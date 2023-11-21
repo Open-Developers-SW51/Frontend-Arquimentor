@@ -10,11 +10,17 @@ import { ArticleService} from "../../services/article.service";
 })
 export class DetailArticleComponent implements OnInit {
     article: Article = { id: 0, name: '', description: '', price: 0 , imageURL: '' };
+    id: number=0;
 
     constructor(
         private articleService: ArticleService,
-        private activatedRoute: ActivatedRoute
-    ) {}
+        private activatedRoute: ActivatedRoute,
+        private route: ActivatedRoute
+    ) {
+      this.route.queryParams.subscribe(params => {
+        this.id = params['id'];
+      });
+    }
 
     ngOnInit() {
         this.chargeArticle();

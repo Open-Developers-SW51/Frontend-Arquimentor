@@ -13,6 +13,7 @@ import {FileUploadService} from "../../../services/file-upload.service";
 export class MentorProfileComponent implements OnInit {
   userProfile: MentorProfile | undefined;
   isEditing = false;
+  certificatesIsEmpty = true;
   dataSource: MatTableDataSource<any>;
   idRouter:Number | undefined;
   images: any = [];
@@ -27,6 +28,11 @@ export class MentorProfileComponent implements OnInit {
     this.dataSource = new MatTableDataSource<any>();
   }
   toggleEdit(): void {
+    // @ts-ignore
+    if (this.userProfile.userProfilePhoto==""){
+      // @ts-ignore
+      this.userProfile.userProfilePhoto="https://cdn.discordapp.com/attachments/1149549726748921939/1175717928063225928/images.png?ex=656c3fa5&is=6559caa5&hm=d6a6935bf1b8eeff5f2ee6b0ad85786c82ac00b04cd78163e624fd62c17a01e1&"
+    }
     this.isEditing = !this.isEditing;
   }
   ngOnInit(): void {
@@ -50,6 +56,11 @@ export class MentorProfileComponent implements OnInit {
         console.log(this.dataSource)
         this.dataSource.data = this.dataSource.data.map((sp: MentorProfile) => {
           console.log(sp);
+          if (sp.certificates.length > 0) {
+            this.certificatesIsEmpty = false;
+          } else {
+            this.certificatesIsEmpty = true;
+          }
           alert("profile editado")
           return sp;
         });
@@ -72,6 +83,12 @@ export class MentorProfileComponent implements OnInit {
     this.mentorProfileService.getMentorProfileId(mentorProfileId).subscribe((response: any) => {
       this.userProfile = response;
       console.log(this.userProfile);
+      // @ts-ignore
+      if (this.userProfile.certificates.length > 0) {
+        this.certificatesIsEmpty = false;
+      } else {
+        this.certificatesIsEmpty = true;
+      }
     });
   }
 

@@ -20,7 +20,7 @@ export class PaymentComponent implements OnInit {
   @Input() name:string = '';
   @Input() price: number = 0;
   @Input() description:string = '';
-
+  @Input() id: number = 0;
   error: any;
 
   cardOptions: StripeCardElementOptions = {
@@ -78,8 +78,7 @@ export class PaymentComponent implements OnInit {
                             (data: any) => {
                                 if (data && data.id) {
                                     const paymentIntentId = data.id;
-                                    this.abrirModal(paymentIntentId, this.name, paymentIntentDto.description, paymentIntentDto.amount);
-                                    this.router.navigate(['/subscripcion']);
+                                    this.abrirModal(paymentIntentId, this.name, paymentIntentDto.description, paymentIntentDto.amount, this.id);
                                 } else {
                                     console.error('Error: La respuesta del backend no tiene la propiedad "id".', data);
                                 }
@@ -103,11 +102,13 @@ export class PaymentComponent implements OnInit {
         }
     }
 
-  abrirModal(id: string, nombre: string, descripcion: string, precio: number) {
+  abrirModal(id: string, name: string, description: string, price: number, idStudent : number): void {
     const modalRef = this.dialogRef.open(ModalComponent);
     modalRef.componentInstance.id = id;
-    modalRef.componentInstance.name = nombre;
-    modalRef.componentInstance.description = descripcion;
-    modalRef.componentInstance.price = precio;
+    modalRef.componentInstance.name = name;
+    modalRef.componentInstance.description = description;
+    modalRef.componentInstance.price = price;
+    modalRef.componentInstance.idStudent = idStudent;
+    console.log(modalRef.componentInstance);
   }
 }

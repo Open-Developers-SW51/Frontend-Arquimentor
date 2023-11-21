@@ -3,12 +3,15 @@
   <div class="header">
     <div class="logo">
       <button (click)="snav.toggle()" class="menu"><mat-icon>menu</mat-icon></button>
-      <img src="https://cdn.discordapp.com/attachments/1149549726748921942/1154114469371334736/image.png">
+      <img  src='https://cdn.discordapp.com/attachments/1149549726748921942/1154114469371334736/image.png'>
     </div>
     <div class="buttons">
         <mat-icon class="notifications">notifications</mat-icon>
-        <mat-icon class="profile">account_circle</mat-icon>
+      <div class="profile-avatar">
+        <img [src]="studentProfile?.userProfilePhoto||'https://cdn.discordapp.com/attachments/1149549726748921939/1175717928063225928/images.png?ex=656c3fa5&is=6559caa5&hm=d6a6935bf1b8eeff5f2ee6b0ad85786c82ac00b04cd78163e624fd62c17a01e1&'" alt="Profile Image">
+      </div>
     </div>
+
   </div>
 
   <mat-sidenav-container class="content">
@@ -18,10 +21,9 @@
         <a (click)="navigateStudentProfile()" class="link"><mat-icon>account_circle</mat-icon> My profile</a>
         <a (click)="navigateMentorProfile()" class="link"><mat-icon>people</mat-icon> Mentors</a>
 
-        <a (click)="navigateSubscription()"class="link"><mat-icon>grade</mat-icon> Subscription</a>
-        <a href="settings" class="link"><mat-icon>settings</mat-icon> Settings</a>
+        <a (click)="navigateSubscription()" class="link"><mat-icon>grade</mat-icon> Subscription</a>
+        <a (click)="navigateSetting()" class="link"><mat-icon>settings</mat-icon> Settings</a>
 
-        <a href="subscription" class="link"><mat-icon>monetization_on</mat-icon>Subscription</a>
 
         <a href="notification" class="link"><mat-icon>notifications</mat-icon>Notifications</a>
 

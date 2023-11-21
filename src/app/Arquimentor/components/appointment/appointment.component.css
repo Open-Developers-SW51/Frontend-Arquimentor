@@ -10,6 +10,15 @@
   width: 80%;
   max-width: 800px;
 }
+
+.descriptionAppointment{
+  padding: 10px;
+  font-size: 15px;
+  background-color: transparent; /* Fondo transparente */
+  border: none; /* Sin borde */
+  outline: none; /* Sin contorno al hacer clic */
+  color: black; /* Color del texto del input */
+}
 .appointment_title{
   margin: 10px 20px;
   display: flex;

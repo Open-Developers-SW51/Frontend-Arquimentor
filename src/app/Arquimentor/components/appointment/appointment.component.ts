@@ -1,17 +1,27 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
+import {Publication} from "../../model/publication";
+import {StudentProfile} from "../../model/student-profile";
+import {ArquimentorService} from "../../services/arquimentor.service";
+import {StudentService} from "../../services/student.service";
+import {StudentProfileService} from "../../services/student-profile.service";
 
 @Component({
   selector: 'app-appointment',
   templateUrl: './appointment.component.html',
   styleUrls: ['./appointment.component.css']
 })
-export class AppointmentComponent {
+export class AppointmentComponent implements OnInit{
   showOverlay = false;
   id: number=0;
-  idPublication: string="degg";
-
-  constructor(private route: ActivatedRoute,private router: Router) {
+  idPublication: string="";
+  publication: Publication;
+  studentProfile: StudentProfile;
+  constructor(private route: ActivatedRoute,
+              private router: Router,
+              private arquimentorService: ArquimentorService,
+              private studentService: StudentProfileService
+              ) {
     // Obtén el parámetro de consulta 'currentUrl'
     this.route.queryParams.subscribe(params => {
       this.id = params['id'];
@@ -19,8 +29,29 @@ export class AppointmentComponent {
     this.route.queryParams.subscribe(params => {
       this.idPublication = params['idPublication'];
     });
+    this.publication = {} as Publication;
+    this.studentProfile = {} as StudentProfile;
+  }
+
+  ngOnInit(): void {
+    this.arquimentorService.getPublicationId(Number(this.idPublication)).subscribe( (data: any) => {
+      console.log("data de la publicacion");
+      if (data != null) {
+        this.publication = data;
+      }
+    });
+    this.studentService.getStudentProfileId(Number(this.id)).subscribe( (data: any) => {
+      console.log(data);
+      console.log("data del student");
+      if (data != null) {
+        console.log("data del student cooewe");
+        this.studentProfile = data;
+      }
+    });
   }
   openOverlay() {
+    console.log(this.idPublication);
+
     this.showOverlay = true;
   }
 
@@ -29,7 +60,7 @@ export class AppointmentComponent {
   }
 
   back() {
-    console.log(this.idPublication);
+
     this.router.navigate(["publication/"+this.idPublication],{ queryParams: { id: this.id } });
   }
 }

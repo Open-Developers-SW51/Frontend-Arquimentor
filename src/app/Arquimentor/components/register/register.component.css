@@ -1,5 +1,9 @@
 .container{
-  background-color: #6e988c;
+  padding: 50px 0;
+  width: 500px;
+  background-color: #598d7e;
+  margin: 50px auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 h3{
@@ -31,24 +35,20 @@ form{
   width: 400px;
 }
 
-mat-label{
-  color: #0E3026;
-  height: 70px;
-  font-size: 20px;
-  padding: 30px;
+.mat-label{
+color: #0E3026;
   font-weight: bold;
-  width: 40px;
-  margin-right: 40px;
-  font-family: 'Overpass', sans-serif;
-
+  font-size: 19px;
+  margin: 0 15px;
 }
 
 .input-box{
-  margin:0.5rem 0;
+  margin:30px 0;
   display: flex;
-  width: 100%;
-  background: #6d978b;
+  align-items: center;
+  justify-content: center;
 
+  width: 100%;
 }
 
 .input-box input{
@@ -56,9 +56,7 @@ mat-label{
   border-radius: 62px;
   height: 1rem;
   padding: 0.5rem 1rem;
-
   width: 90%;
-  margin-bottom: 1rem;
   border: none;
 }
 
