@@ -11,8 +11,7 @@ export class NotificationListComponent implements OnInit{
   notifications: Notification[]=[];
   constructor(private notificationService: NotificationService) { }
 
-  ngOnInit() {
-
+  ngOnInit() {this.loadNotifications();
   }
   showNotifications() {
     this.loadNotifications();
