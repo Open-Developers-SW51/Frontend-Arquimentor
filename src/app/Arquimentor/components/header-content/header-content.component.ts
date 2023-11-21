@@ -1,7 +1,7 @@
 import {ChangeDetectorRef, Component} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {StudentProfileService} from "../../services/student-profile.service";
-import {StudentProfile} from "../../model/student-profile";
+import {StudentProfileService} from "../../../user/services/student-profile.service";
+import {StudentProfile} from "../../../user/model/student-profile";
 @Component({
   selector: 'app-header-content',
   templateUrl: './header-content.component.html',

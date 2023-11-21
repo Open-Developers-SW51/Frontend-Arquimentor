@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {MentorProfile} from "../../../model/mentor-profile";
+import {MentorProfile} from "../../model/mentor-profile";
 import {MatTableDataSource} from "@angular/material/table";
-import {MentorProfileService} from "../../../services/mentor-profile.service";
-import {FileUploadService} from "../../../services/file-upload.service";
+import {MentorProfileService} from "../../services/mentor-profile.service";
+import {FileUploadService} from "../../../Arquimentor/services/file-upload.service";
 
 @Component({
   selector: 'app-mentor-profile',

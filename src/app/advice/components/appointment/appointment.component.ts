@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {Publication} from "../../model/publication";
-import {StudentProfile} from "../../model/student-profile";
-import {ArquimentorService} from "../../services/arquimentor.service";
-import {StudentService} from "../../services/student.service";
-import {StudentProfileService} from "../../services/student-profile.service";
+import {Publication} from "../../../Arquimentor/model/publication";
+import {StudentProfile} from "../../../user/model/student-profile";
+import {PublicationService} from "../../../Arquimentor/services/publication.service";
+import {StudentService} from "../../../user/services/student.service";
+import {StudentProfileService} from "../../../user/services/student-profile.service";
 
 @Component({
   selector: 'app-appointment',
@@ -19,7 +19,7 @@ export class AppointmentComponent implements OnInit{
   studentProfile: StudentProfile;
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private arquimentorService: ArquimentorService,
+              private arquimentorService: PublicationService,
               private studentService: StudentProfileService
               ) {
     // Obtén el parámetro de consulta 'currentUrl'

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {StudentProfile} from "../../../model/student-profile";
-import {StudentProfileService} from "../../../services/student-profile.service";
+import {StudentProfile} from "../../model/student-profile";
+import {StudentProfileService} from "../../services/student-profile.service";
 import {MatTableDataSource} from "@angular/material/table";
-import {FileUploadService} from "../../../services/file-upload.service";
+import {FileUploadService} from "../../../Arquimentor/services/file-upload.service";
 
 @Component({
   selector: 'app-student-profile',
