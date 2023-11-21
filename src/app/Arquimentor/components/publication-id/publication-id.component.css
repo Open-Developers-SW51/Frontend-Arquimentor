@@ -36,7 +36,7 @@
 .modal{
   margin-top: 30px;
   position: fixed;
-  width: 60%;
+  width: 400px;
   background-color: #E3BD86;
   border-radius: 15px;
   border-color: #e0b781;
@@ -56,7 +56,6 @@ dialog.modal::backdrop {
   box-shadow: 0 4px 8px 0 rgb(173, 144, 99);
 }
 form{
-  background-color: #9197cb;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -162,7 +161,6 @@ p {
 }
 
 .description{
-  background-color: #d9a65e;
   font-family: Arial;
   padding: 20px;
   margin: 0 20px;
@@ -173,7 +171,6 @@ p {
   font-size: 17px;
   width: 22%;
   padding: 5px 20px;
-  background-color: #d9a65e;
   margin: 0 20px;
   border-radius: 10px 10px 0 0;
 }
