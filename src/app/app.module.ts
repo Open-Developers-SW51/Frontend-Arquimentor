@@ -12,7 +12,7 @@ import {MatListModule} from "@angular/material/list";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatCardModule} from "@angular/material/card";
 import {MatMenuModule} from "@angular/material/menu";
-import {NgOptimizedImage} from "@angular/common";
+import {CommonModule, NgOptimizedImage} from "@angular/common";
 
 import { HeaderContentComponent } from './Arquimentor/components/header-content/header-content.component';
 import {RouterOutlet} from "@angular/router";
@@ -51,6 +51,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {ModalComponent} from "./Arquimentor/components/modal/modal.component";
 import {DetailArticleComponent} from "./Arquimentor/components/detail-article/detail-article.component";
 import {PaymentComponent} from "./Arquimentor/components/payment/payment.component";
+import { NotificationItemComponent } from './Arquimentor/components/notification-item/notification-item.component';
+import { NotificationListComponent } from './Arquimentor/components/notification-list/notification-list.component';
 
 @NgModule({
   declarations: [
@@ -74,9 +76,12 @@ import {PaymentComponent} from "./Arquimentor/components/payment/payment.compone
     SettingsComponent,
     ModalComponent,
     DetailArticleComponent,
-    PaymentComponent
+    PaymentComponent,
+    NotificationItemComponent,
+    NotificationListComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
@@ -104,6 +109,7 @@ import {PaymentComponent} from "./Arquimentor/components/payment/payment.compone
     MatDialogModule,
     NgxStripeModule.forRoot('pk_test_51ODdN2DfqBM3nCd5wl2V5i8IhWVgxLG25CI7xvg7fvJ5fquCOvFj9qYLLZdrSbeamcg2LP8Nf8x3a7zxqXGylh1R00rXbH0SgY'),
   ],
+  exports:[ NotificationItemComponent,],
   providers: [ArquimentorService, {
   provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
   }],
