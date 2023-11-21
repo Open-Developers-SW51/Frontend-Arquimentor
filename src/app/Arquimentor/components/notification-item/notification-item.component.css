@@ -1,0 +1,41 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh; /* Esto establece la altura del contenedor al 100% del viewport height */
+}
+
+mat-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px;
+  width: 450px; /* Ajusta el ancho según tus preferencias */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #E3BD86;
+}
+
+mat-card-title,
+mat-card-subtitle {
+  padding: 16px;
+  font-size: 1.5em; /* Tamaño de la fuente para el título y el subtítulo */
+  font-weight: bold; /* Texto en negrita para el título */
+  color: #2E2E2E; /* Color del texto oscuro para el título y el subtítulo */
+}
+
+mat-card-subtitle {
+  font-size: 1em; /* Tamaño de la fuente para el subtítulo */
+  font-weight: normal; /* Texto normal para el subtítulo */
+}
+
+mat-card-content {
+  padding: 16px;
+  font-size: 1.2em; /* Tamaño de la fuente para el contenido */
+  color: #333; /* Color del texto oscuro para el contenido */
+}
+
+/* Estilo adicional para resaltar el contenido */
+mat-card-content strong {
+  color: #1E88E5; /* Color del texto resaltado */
+}

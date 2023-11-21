@@ -17,6 +17,8 @@ import {AppointmentComponent} from "./Arquimentor/components/appointment/appoint
 // @ts-ignore
 import {AuthGuard} from "./Arquimentor/helpers/auth.guard.ts";
 import {DetailArticleComponent} from "./Arquimentor/components/detail-article/detail-article.component";
+import {NotificationListComponent} from "./Arquimentor/components/notification-list/notification-list.component";
+
 
 
 
@@ -31,6 +33,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'appointment', component: AppointmentComponent,canActivate: [AuthGuard]},
   { path: 'subscription', component: SubscriptionContentComponent,canActivate: [AuthGuard]},
+  {path: 'notification', component: NotificationListComponent,canActivate: [AuthGuard]},
   { path: 'create-post', component: CreatePostComponent,canActivate: [AuthGuard]},
 
   { path: 'subscription', component: SubscriptionComponent,canActivate: [AuthGuard]},

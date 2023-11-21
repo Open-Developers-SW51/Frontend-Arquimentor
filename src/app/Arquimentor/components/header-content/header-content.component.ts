@@ -33,6 +33,10 @@ export class HeaderContentComponent {
     this.router.navigate(['student-profile/'+this.id],{ queryParams: { id: this.id } });
   }
 
+  showNotifications(){
+
+  }
+
   navigateLogin() {
     localStorage.removeItem('token');
     this.router.navigate(['login'],{ queryParams: { id: this.id } });
