@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import {environment} from "../../../environments/environment";
 import {HttpClient, HttpErrorResponse, HttpHeaders} from "@angular/common/http";
 import {catchError, Observable, retry, throwError} from "rxjs";
+import {environmentProduction} from "../../../environments/enviroment.production";
 
 @Injectable({
   providedIn: 'root'
 })
 export class BaseService<T> {
-  basePath: string = `${environment.serverBasePath}`;
+  basePath: string = `${environmentProduction.serverBasePath}`;
+  //basePath: string = `${environment.serverBasePath}`;
   resourceEndpoint: string = '/resources';
 
   httpOptions = {
