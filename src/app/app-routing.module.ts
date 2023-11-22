@@ -2,18 +2,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { StudentProfileComponent } from './user/pages/student-profile/student-profile.component';
 import { MentorProfileComponent } from './user/pages/mentor-profile/mentor-profile.component';
-import {PublicationIdComponent} from "./Arquimentor/pages/publication-id/publication-id.component";
-import { CreatePostComponent } from './Arquimentor/pages/create-post/create-post.component';
+import {PublicationIdComponent} from "./publication/pages/publication-id/publication-id.component";
+import { CreatePostComponent } from './publication/pages/create-post/create-post.component';
 import {LoginComponent} from "./user/pages/login/login.component";
 import {RegisterComponent} from "./user/pages/register/register.component";
-import {MainComponent} from "./Arquimentor/pages/main/main.component";
-import {SettingsComponent} from "./Arquimentor/pages/settings/settings.component";
+import {MainComponent} from "./publication/pages/main/main.component";
+import {SettingsComponent} from "./publication/pages/settings/settings.component";
 import {SubscriptionContentComponent} from "./subscription/pages/subscription-content/subscription-content.component";
-import {AppointmentComponent} from "./advice/components/appointment/appointment.component";
+import {AppointmentComponent} from "./advise/pages/appointment/appointment.component";
 // @ts-ignore
 import {AuthGuard} from "./shared/helpers/auth.guard.ts";
 import {DetailArticleComponent} from "./subscription/pages/detail-article/detail-article.component";
-import {NotificationListComponent} from "./advice/pages/notification-list/notification-list.component";
+import {NotificationListComponent} from "./advise/pages/notification-list/notification-list.component";
 
 
 

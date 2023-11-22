@@ -57,22 +57,4 @@ export class BaseService<T> {
     return this.http.get<T>(this.resourcePath(), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
-
-
-
-
-
-
-  incrementLike(id:any): Observable<T>{
-    return this.http.post<T>(`${this.resourcePath()}/${id}/incrementLike`, this.httpOptions)
-      .pipe(retry(2), catchError(this.handleError));
-  }
-  discountLike(id:any): Observable<T>{
-    return this.http.post<T>(`${this.resourcePath()}/${id}/discountLike`, this.httpOptions)
-      .pipe(retry(2), catchError(this.handleError));
-  }
-  incrementView(id:any): Observable<T>{
-    return this.http.post<T>(`${this.resourcePath()}/${id}/incrementView`, this.httpOptions)
-      .pipe(retry(2), catchError(this.handleError));
-  }
 }
