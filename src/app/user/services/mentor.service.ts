@@ -13,8 +13,5 @@ export class MentorService extends BaseService<Mentor>{
     super(http);
     this.resourceEndpoint = '/mentors';
   }
-  getMentorById(id: number): any {
-    return this.http.get(`${this.resourcePath()}/${id}`, this.httpOptions)
-      .pipe(retry(2), catchError(this.handleError));
-  }
+
 }

@@ -14,30 +14,28 @@ import {MatCardModule} from "@angular/material/card";
 import {MatMenuModule} from "@angular/material/menu";
 import {CommonModule, NgOptimizedImage} from "@angular/common";
 
-import { HeaderContentComponent } from './Arquimentor/components/header-content/header-content.component';
+import { HeaderContentComponent } from './publication/components/header-content/header-content.component';
 import {RouterOutlet} from "@angular/router";
 import { MentorProfileComponent } from './user/pages/mentor-profile/mentor-profile.component';
 import { StudentProfileComponent } from './user/pages/student-profile/student-profile.component';
 import { AppRoutingModule } from './app-routing.module';
-import {PublicationService} from "./Arquimentor/services/publication.service";
+import {PublicationService} from "./publication/services/publication.service";
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-import {PublicationIdComponent} from "./Arquimentor/pages/publication-id/publication-id.component";
-import {ChatComponent} from "./Arquimentor/components/chat/chat.component";
-import {ReviewsComponent} from "./Arquimentor/components/reviews/reviews.component";
-
-import { CardPublicationContentComponent } from './Arquimentor/components/card-publication-content/card-publication-content.component';
-import {HeaderComponent} from "./Arquimentor/components/header/header.component";
+import {PublicationIdComponent} from "./publication/pages/publication-id/publication-id.component";
+import {ReviewsComponent} from "./publication/components/reviews/reviews.component";
+import { CardPublicationContentComponent } from './publication/components/card-publication-content/card-publication-content.component';
+import {HeaderComponent} from "./user/components/header/header.component";
 import{LoginComponent} from "./user/pages/login/login.component";
 import {RegisterComponent} from "./user/pages/register/register.component";
-import { MainComponent } from './Arquimentor/pages/main/main.component';
+import { MainComponent } from './publication/pages/main/main.component';
 import {SubscriptionContentComponent} from "./subscription/pages/subscription-content/subscription-content.component";
-import { CreatePostComponent } from './Arquimentor/pages/create-post/create-post.component';
+import { CreatePostComponent } from './publication/pages/create-post/create-post.component';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
-import { AppointmentComponent } from './advice/components/appointment/appointment.component';
-import { InformationWindowComponent } from './Arquimentor/components/information-window/information-window.component';
+import { AppointmentComponent } from './advise/pages/appointment/appointment.component';
+import { InformationWindowComponent } from './publication/components/information-window/information-window.component';
 import {AuthInterceptor} from "./shared/helpers/auth.interceptor";
-import { SettingsComponent } from './Arquimentor/pages/settings/settings.component';
+import { SettingsComponent } from './publication/pages/settings/settings.component';
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatRadioModule} from "@angular/material/radio";
 import {MatSliderModule} from "@angular/material/slider";
@@ -50,8 +48,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {ModalComponent} from "./subscription/components/modal/modal.component";
 import {DetailArticleComponent} from "./subscription/pages/detail-article/detail-article.component";
 import {PaymentComponent} from "./subscription/pages/payment/payment.component";
-import { NotificationItemComponent } from './advice/pages/notification-item/notification-item.component';
-import { NotificationListComponent } from './advice/pages/notification-list/notification-list.component';
+import { NotificationItemComponent } from './advise/components/notification-item/notification-item.component';
+import { NotificationListComponent } from './advise/pages/notification-list/notification-list.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +58,6 @@ import { NotificationListComponent } from './advice/pages/notification-list/noti
     MentorProfileComponent,
     StudentProfileComponent,
     PublicationIdComponent,
-    ChatComponent,
     ReviewsComponent,
     HeaderComponent,
     LoginComponent,

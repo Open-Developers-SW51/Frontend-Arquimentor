@@ -78,7 +78,7 @@ export class PaymentComponent implements OnInit {
                             (data: any) => {
                                 if (data && data.id) {
                                     const paymentIntentId = data.id;
-                                    this.abrirModal(paymentIntentId, this.name, paymentIntentDto.description, paymentIntentDto.amount, this.id);
+                                    this.openModal(paymentIntentId, this.name, paymentIntentDto.description, paymentIntentDto.amount, this.id);
                                 } else {
                                     console.error('Error: La respuesta del backend no tiene la propiedad "id".', data);
                                 }
@@ -102,7 +102,7 @@ export class PaymentComponent implements OnInit {
         }
     }
 
-  abrirModal(id: string, name: string, description: string, price: number, idStudent : number): void {
+  openModal(id: string, name: string, description: string, price: number, idStudent : number): void {
     const modalRef = this.dialogRef.open(ModalComponent);
     modalRef.componentInstance.id = id;
     modalRef.componentInstance.name = name;
